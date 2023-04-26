@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppColor {
     static let success = Color("Success")
-    static let info = Color("info")
+    static let info = Color("Info")
     static let warning = Color("Warning")
     static let danger = Color("Danger")
     

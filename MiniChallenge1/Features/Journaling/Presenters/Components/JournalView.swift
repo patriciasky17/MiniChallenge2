@@ -9,12 +9,18 @@ import SwiftUI
 
 struct JournalView: View {
     @State var userName = "Tessa"
-    @State var lastEdited = "May 27th, 2022"
     
+    @State var priorityJournalNameTitle = "Psychopatic Journal"
+    @State var priorityLastEdited = "May 21th, 2022"
+    @State var priorityProgressBarSize = 80.0
+    @State var priorityProgress = 0.88
+    
+    @State var lastEdited = "May 24th, 2022"
+    @State var journalNameTitle = "Test Journal"
     @State var progressBarSize = 80.0
-    @State var progress = 0.5
+    @State var progress = 0.4
     
-    @State var presentSheet = false
+    @State private var showSheet = false
     
     let columns = [
         GridItem(.flexible()),
@@ -33,16 +39,23 @@ struct JournalView: View {
             ScrollView {
                 VStack {
                     VStack (spacing: 30){
-                        MainJournalCardView()
+                        MainJournalCardView(journalNameTitle: $priorityJournalNameTitle, lastEdited: $priorityLastEdited, progressBarSize: $priorityProgressBarSize, progress: $priorityProgress)
                         
                         LazyVGrid (columns: columns, spacing: 370){
-                            OtherJournalCardView()
-                            OtherJournalCardView()
-                            OtherJournalCardView()
-                            Button("Modal") {
-                                presentSheet = true
+                            ForEach(0..<4) { index in
+                                if index == 3 {
+                                    ButtonMainJournalView()
+                                        .padding([.leading], 10)
+                                }
+                                else if index % 2 == 0 && index != 1 {
+                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
+                                        .padding([.trailing], 10)
+                                } else if index % 2 == 1 {
+                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
+                                        .padding([.leading], 10)
+                                }
                             }
-                            
+                                                        
                             
                         }
                         
@@ -57,11 +70,6 @@ struct JournalView: View {
             }
                 
             Spacer()
-        }
-        .sheet(isPresented: $presentSheet) {
-            Text("Detail")
-                .presentationDetents([.height(250)])
-
         }
         .padding([.leading, .trailing, .top], 40)
         .background(AppColor.neutral20)

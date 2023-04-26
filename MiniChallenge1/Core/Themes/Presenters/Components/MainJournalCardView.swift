@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MainJournalCardView: View {
-    @State var userName = "Tessa"
-    @State var lastEdited = "May 27th, 2022"
+    @Binding var journalNameTitle: String
+    @Binding var lastEdited: String
     
-    @State var progressBarSize = 80.0
-    @State var progress = 0.5
+    @Binding var progressBarSize: Double
+    @Binding var progress: Double
     
     var body: some View {
         NavigationLink (destination: HistoryView()){
@@ -24,7 +24,7 @@ struct MainJournalCardView: View {
                 VStack {
                     VStack (spacing: 10) {
                         HStack {
-                            Text("Psychopatic Journal")
+                            Text("\(journalNameTitle)")
                                 .font(.largeTitle)
                                 .fontWeight(.medium)
                             .foregroundColor(AppColor.neutral70)
@@ -44,7 +44,7 @@ struct MainJournalCardView: View {
                     HStack {
                         Spacer()
                         ZStack {
-                            CircularProgressBar()
+                            CircularProgressBar(progressBar: $progress)
                                 .frame(width: progressBarSize, height: progressBarSize)
                             Text("\(progress * 100, specifier: "%.0f")%")
                                 .font(.title3)
@@ -71,8 +71,8 @@ struct MainJournalCardView: View {
     }
 }
 
-struct MainJournalCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainJournalCardView()
-    }
-}
+//struct MainJournalCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainJournalCardView()
+//    }
+//}

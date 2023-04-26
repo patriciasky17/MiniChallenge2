@@ -32,6 +32,8 @@
 		8B63CE5A29F917A500012A38 /* CornerRadius+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE5929F917A500012A38 /* CornerRadius+Ext.swift */; };
 		8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE5D29F9530200012A38 /* MainJournalCardView.swift */; };
 		8B63CE6129F9531600012A38 /* OtherJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */; };
+		8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */; };
+		8B63CE6A29F99E3000012A38 /* ModalCreateJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		8B63CE5929F917A500012A38 /* CornerRadius+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Ext.swift"; sourceTree = "<group>"; };
 		8B63CE5D29F9530200012A38 /* MainJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainJournalCardView.swift; sourceTree = "<group>"; };
 		8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherJournalCardView.swift; sourceTree = "<group>"; };
+		8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainJournalView.swift; sourceTree = "<group>"; };
+		8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCreateJournalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +220,12 @@
 		8B5BFBC629F291DA002A2526 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8B63CE6829F99DBA00012A38 /* MiniComponent */,
 				8B5BFBC729F291EF002A2526 /* VerticalTitleDescriptionComponent.swift */,
-				8B63CE5729F913DD00012A38 /* CircularProgressBar.swift */,
 				8B63CE5D29F9530200012A38 /* MainJournalCardView.swift */,
 				8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */,
+				8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */,
+				8B5BFBD729F2C6BD002A2526 /* ViewModels */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -237,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				8B5BFBD629F2C6B2002A2526 /* Models */,
-				8B5BFBD729F2C6BD002A2526 /* ViewModels */,
 				8B5BFBD829F2C6D4002A2526 /* Presenters */,
 			);
 			path = Journaling;
@@ -296,6 +301,15 @@
 				8B63CE5929F917A500012A38 /* CornerRadius+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B63CE6829F99DBA00012A38 /* MiniComponent */ = {
+			isa = PBXGroup;
+			children = (
+				8B63CE5729F913DD00012A38 /* CircularProgressBar.swift */,
+				8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */,
+			);
+			path = MiniComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +387,7 @@
 				8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
+				8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */,
 				8B5BFBE129F2C85A002A2526 /* JournalingViewModel.swift in Sources */,
 				8B63CE6129F9531600012A38 /* OtherJournalCardView.swift in Sources */,
 				8B63CE5629F6D7D000012A38 /* UIImage+Ext.swift in Sources */,
@@ -389,6 +404,7 @@
 				8B5BFBD229F292DD002A2526 /* CardModifier.swift in Sources */,
 				8B5BFBC829F291EF002A2526 /* VerticalTitleDescriptionComponent.swift in Sources */,
 				8B5BFBC329F2901F002A2526 /* AppColor.swift in Sources */,
+				8B63CE6A29F99E3000012A38 /* ModalCreateJournalView.swift in Sources */,
 				8B5BFBC529F291CE002A2526 /* EmptyStateView.swift in Sources */,
 				8B63CE5829F913DD00012A38 /* CircularProgressBar.swift in Sources */,
 			);

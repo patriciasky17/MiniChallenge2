@@ -7,18 +7,20 @@
 
 import SwiftUI
 
-struct CircularProgressBar: View {  
+struct CircularProgressBar: View {
+    @Binding var progressBar: Double
+    
     var body: some View {
         ZStack {
             Circle()
                 .stroke(
-                    Color.pink.opacity(0.5),
+                    AppColor.neutral50,
                     lineWidth: 15
                 )
             Circle()
-                .trim(from: 0, to: 0.25)
+                .trim(from: 0, to: progressBar)
                 .stroke(
-                    Color.pink,
+                    AppColor.green60,
                     // 1
                     style: StrokeStyle(
                         lineWidth: 15,
@@ -30,8 +32,8 @@ struct CircularProgressBar: View {
     }
 }   
 
-struct CircularProgressBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CircularProgressBar()
-    }
-}
+//struct CircularProgressBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CircularProgressBar()
+//    }
+//}

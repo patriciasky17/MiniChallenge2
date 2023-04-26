@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct OtherJournalCardView: View {
-    @State var userName = "Tessa"
-    @State var lastEdited = "May 27th, 2022"
+    @Binding var journalNameTitle: String
+    @Binding var lastEdited: String
     
-    @State var progressBarSize = 80.0
-    @State var progress = 0.5
+    @Binding var progressBarSize: Double
+    @Binding var progress: Double
+    
+//    @Binding var colorJournal: Color
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,7 +28,7 @@ struct OtherJournalCardView: View {
                         VStack {
                             VStack (spacing: 10) {
                                 HStack {
-                                    Text("Psychopatic Journal")
+                                    Text("\(journalNameTitle)")
                                         .font(.title)
                                         .fontWeight(.medium)
                                         .foregroundColor(AppColor.neutral70)
@@ -46,7 +48,7 @@ struct OtherJournalCardView: View {
                             HStack {
                                 Spacer()
                                 ZStack {
-                                    CircularProgressBar()
+                                    CircularProgressBar(progressBar: $progress)
                                         .frame(width: progressBarSize, height: progressBarSize)
                                     Text("\(progress * 100, specifier: "%.0f")%")
                                         .font(.title3)
@@ -77,8 +79,8 @@ struct OtherJournalCardView: View {
     }
 }
 
-struct OtherJournalCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        OtherJournalCardView()
-    }
-}
+//struct OtherJournalCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OtherJournalCardView(lastEdited: Binding.constant("Test"))
+//    }
+//}
