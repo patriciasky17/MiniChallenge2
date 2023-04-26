@@ -22,7 +22,7 @@ extension Prompt {
         static let history = "History"
         static let profile = "Profile"
         static let editProfile = "Edit Profile"
-        static let yourBodyMassIndex = "Hi, User!"
+        static let yourHomeProfile = "Hi, User!"
         
         static let selfAssessmentResult = "Self-Assessment Result"
         static let date = "Date"

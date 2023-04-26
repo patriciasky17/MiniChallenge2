@@ -32,24 +32,30 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView{
-            Group {
-                JournalView()
-                    .badge(2)
-                    .tabItem() {
-                        Label("", systemImage: "book.closed")
-                    }
-                HistoryView()
-                    .tabItem() {
-                        Label("", systemImage: "clock.arrow.circlepath")
-                    }
-                ProfileView()
-                    .tabItem() {
-                        Label("", systemImage: "person")
-                    }
+        NavigationStack {
+            TabView{
+                Group {
+                    JournalView()
+                        .badge(2)
+                        .tabItem() {
+                            Label("", systemImage: "book.closed")
+                        }
+                        .background(AppColor.neutral20)
+                    HistoryView()
+                        .tabItem() {
+                            Label("", systemImage: "clock.arrow.circlepath")
+                        }
+                        .background(AppColor.neutral20)
+                    ProfileView()
+                        .tabItem() {
+                            Label("", systemImage: "person")
+                        }
+                        .background(AppColor.neutral20)
+                }
             }
+            
+            .toolbarColorScheme(.light, for: .tabBar)
         }
-        .toolbarColorScheme(.light, for: .tabBar)
     }
 }
 
