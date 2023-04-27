@@ -11,7 +11,8 @@ import SwiftUI
 struct MiniChallenge1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreen()
+//            ContentView()
         }
     }
 }

@@ -34,6 +34,8 @@
 		8B63CE6129F9531600012A38 /* OtherJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */; };
 		8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */; };
 		8B63CE6A29F99E3000012A38 /* ModalCreateJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */; };
+		8B63CE6C29FA402600012A38 /* PromptJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6B29FA402600012A38 /* PromptJournalView.swift */; };
+		8B63CE6E29FA64B000012A38 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63CE6D29FA64B000012A38 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherJournalCardView.swift; sourceTree = "<group>"; };
 		8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMainJournalView.swift; sourceTree = "<group>"; };
 		8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCreateJournalView.swift; sourceTree = "<group>"; };
+		8B63CE6B29FA402600012A38 /* PromptJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptJournalView.swift; sourceTree = "<group>"; };
+		8B63CE6D29FA64B000012A38 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +294,8 @@
 				8B5BFBE829F51293002A2526 /* JournalView.swift */,
 				8B5BFBEA29F512A0002A2526 /* HistoryView.swift */,
 				8B5BFBEC29F512AB002A2526 /* ProfileView.swift */,
+				8B63CE6B29FA402600012A38 /* PromptJournalView.swift */,
+				8B63CE6D29FA64B000012A38 /* SplashScreen.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -388,8 +394,10 @@
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
 				8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */,
+				8B63CE6C29FA402600012A38 /* PromptJournalView.swift in Sources */,
 				8B5BFBE129F2C85A002A2526 /* JournalingViewModel.swift in Sources */,
 				8B63CE6129F9531600012A38 /* OtherJournalCardView.swift in Sources */,
+				8B63CE6E29FA64B000012A38 /* SplashScreen.swift in Sources */,
 				8B63CE5629F6D7D000012A38 /* UIImage+Ext.swift in Sources */,
 				8B5BFBB929F28CB5002A2526 /* Prompt.swift in Sources */,
 				8B5BFBE929F51293002A2526 /* JournalView.swift in Sources */,
