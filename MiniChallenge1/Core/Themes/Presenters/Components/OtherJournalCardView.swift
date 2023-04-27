@@ -19,7 +19,7 @@ struct OtherJournalCardView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                NavigationLink (destination: HistoryView()) {
+                NavigationLink (destination: PromptJournalView()) {
                     HStack (spacing: 0) {
                         RoundedRectangle(cornerRadius: 0)
                             .foregroundColor(AppColor.success)

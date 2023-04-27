@@ -34,27 +34,36 @@ struct HistoryView: View {
                     VStack{
                         List{
                             ForEach(0..<4){ index in
-                                items[index]                        .swipeActions {
+                                items[index]
+                                    .background(AppColor.neutral10)
+                                    .swipeActions {
                                     Button (role: .destructive) {
-                                                                    print("Edit button was tapped")
-                                                                } label: {
-                                                                    Image(systemName: "minus.circle.fill")
-                                                                }
+                                        print("Edit button was tapped")
+                                    } label: {
+                                        Image(systemName: "minus.circle.fill")
+                                            
+                                    }
+                                        
                                 }
+
+                                .padding([.top, .bottom], 10)
                                 .listRowSeparator(.hidden)
+                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+
                                 .listRowBackground(
                                     RoundedRectangle(cornerRadius: 5)
                                         .background(.clear)
                                         .foregroundColor(.clear)
-//                                        .padding(
-//                                            EdgeInsets(
-//                                                top: 2,
-//                                                leading: 10,
-//                                                bottom: 2,
-//                                                trailing: 10
-//                                            )
-//                                        )
+                                        .padding(
+                                            EdgeInsets(
+                                                top: 2,
+                                                leading: 10,
+                                                bottom: 2,
+                                                trailing: 10
+                                            )
+                                        )
                                 )
+                                
                             }
                             .onDelete{ IndexSet in
                                 items.remove(atOffsets: IndexSet)
