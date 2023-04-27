@@ -27,6 +27,7 @@ struct HistoryView: View {
                     .multilineTextAlignment(.leading)
                     .font(.largeTitle)
                 Spacer()
+                Image(systemName: "arrow.up.arrow.down")
             }
             
 //            ScrollView {
