@@ -11,7 +11,7 @@ struct HistoryJournalCardView: View {
     @State var lastEdited = "May 27th, 2022"
     
     var body: some View {
-        NavigationLink (destination: HistoryView()){
+        NavigationLink (destination: PromptJournalView()){
                 VStack {
                     VStack (spacing: 10) {
                         HStack {
