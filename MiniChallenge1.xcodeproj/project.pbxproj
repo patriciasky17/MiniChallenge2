@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */; };
 		8B5BFB6C29EFE370002A2526 /* MiniChallenge1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6B29EFE370002A2526 /* MiniChallenge1App.swift */; };
 		8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6D29EFE370002A2526 /* ContentView.swift */; };
 		8B5BFB7029EFE371002A2526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6F29EFE371002A2526 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryJournalCardView.swift; sourceTree = "<group>"; };
 		8B5BFB6829EFE370002A2526 /* MiniChallenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5BFB6B29EFE370002A2526 /* MiniChallenge1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge1App.swift; sourceTree = "<group>"; };
 		8B5BFB6D29EFE370002A2526 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				8B63CE5D29F9530200012A38 /* MainJournalCardView.swift */,
 				8B63CE6029F9531600012A38 /* OtherJournalCardView.swift */,
 				8B63CE6629F9919C00012A38 /* ButtonMainJournalView.swift */,
+				42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */,
 				8B5BFBD729F2C6BD002A2526 /* ViewModels */,
 			);
 			path = Components;
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5BFBBB29F28D20002A2526 /* ErrorMessage.swift in Sources */,
+				42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */,
 				8B63CE5A29F917A500012A38 /* CornerRadius+Ext.swift in Sources */,
 				8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
