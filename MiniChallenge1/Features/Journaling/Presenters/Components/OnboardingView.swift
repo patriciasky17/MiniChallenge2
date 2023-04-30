@@ -9,36 +9,64 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack{
-                VStack(alignment: .leading){
-                    Text("Help us Personalize your Journal")
-                        .font(.largeTitle)
-                        .padding(.bottom, 16)
-                    Text("Suatu copywriting yang menunjukkan ini buat orang broken home")
-                        .font(.title3)
-                }
-                .frame(width: 300)
-                .background(.clear)
-                VStack {
-                    HStack(alignment: .top){
-                        GeometryReader { geo in
-                            Image("Onboarding1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geo.size.width, height: geo.size.height)
-                                .clipped()
-                                .alignmentGuide(.leading, computeValue: { _ in -geo.size.width * 2 }) // align to the leading edge
+        NavigationStack {
+            VStack {
+                Spacer()
+                ZStack{
+                    HStack {
+                        VStack {
+                            GeometryReader { geo in
+                                HStack(alignment: .top){
+                                    Image("Onboarding1")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: geo.size.width * 0.875, height: geo.size.height )
+                                        .alignmentGuide(.leading, computeValue: { _ in -geo.size.width * 1 }) // align to the leading edge
+                                }
+                                .frame(maxWidth: .infinity)
+                                .offset(x: geo.size.width * 0.38)
+                            }
+                            
                         }
                     }
-                    .frame(maxWidth: .infinity)
+                    
+                    HStack {
+                        VStack(alignment: .leading){
+                            Text("Help us Personalize your Journal")
+                                .font(title1)
+                                .padding(.bottom, 16)
+                                .foregroundColor(AppColor.green50)
+                            Text("Suatu copywriting yang menunjukkan ini buat orang broken home")
+                                .font(body24)
+                                .foregroundColor(AppColor.green40)
+                        }
+                        .frame(width: 305)
+                        Spacer()
+                    }
+                    
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            NavigationLink(destination: AssesmentView()) {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 100)
+                                        .foregroundColor(AppColor.green60)
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(AppColor.neutral10)
+                                        .font(.system(size: 30))
+                                }
+                                    
+                            }
+                        }
+                    }
                 }
+                Spacer()
             }
-            Spacer()
+            .padding([.leading, .trailing, .top, .bottom], 40)
+        .background(AppColor.neutral20)
         }
-        .padding([.leading, .trailing, .top, .bottom], 40)
-                .background(AppColor.neutral20)
         }
     }
     

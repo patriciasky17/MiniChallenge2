@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 var menuTitle = Font.system(size: 20, weight: .regular)
-var title1 = Font.system(size: 36, weight: .regular)
+var title1 = Font.system(size: 58, weight: .regular)
 var journalTitle = Font.system(size: 40, weight: .medium)
 
 var promptNumber = Font.system(size: 16, weight: .regular)
