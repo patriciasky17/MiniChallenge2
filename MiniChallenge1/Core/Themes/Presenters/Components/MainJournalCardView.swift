@@ -25,15 +25,15 @@ struct MainJournalCardView: View {
                     VStack (spacing: 10) {
                         HStack {
                             Text("\(journalNameTitle)")
-                                .font(.largeTitle)
-                                .fontWeight(.medium)
-                            .foregroundColor(AppColor.neutral70)
-                            .multilineTextAlignment(.leading)
+                                .font(journalTitle)
+                                .foregroundColor(AppColor.green60)
+                                .multilineTextAlignment(.leading)
                             Spacer()
                         }
                         HStack {
                             Text("Last Edited \(lastEdited)")
-                                .foregroundColor(AppColor.green100)
+                                .font(caption24)
+                                .foregroundColor(AppColor.green30)
                                 .multilineTextAlignment(.leading)
                             Spacer()
                         }
@@ -47,7 +47,7 @@ struct MainJournalCardView: View {
                             CircularProgressBar(progressBar: $progress)
                                 .frame(width: progressBarSize, height: progressBarSize)
                             Text("\(progress * 100, specifier: "%.0f")%")
-                                .font(.title3)
+                                .font(bodyBold)
                                 .fontWeight(.semibold)
                                 .foregroundColor(AppColor.green60)
                         }
@@ -71,8 +71,8 @@ struct MainJournalCardView: View {
     }
 }
 
-//struct MainJournalCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainJournalCardView()
-//    }
-//}
+struct MainJournalCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainJournalCardView(journalNameTitle: .constant("test"), lastEdited:.constant("27 Maret"), progressBarSize: .constant(100), progress: .constant(0.1))
+    }
+}

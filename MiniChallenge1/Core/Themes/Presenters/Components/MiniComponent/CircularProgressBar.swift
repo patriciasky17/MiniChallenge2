@@ -29,6 +29,7 @@ struct CircularProgressBar: View {
                 )
                 .rotationEffect(.degrees(-90))
         }
+        .frame(width: 100)
     }
 }   
 

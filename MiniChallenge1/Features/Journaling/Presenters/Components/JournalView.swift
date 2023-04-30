@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct JournalView: View {
-    @State var userName = "Tessa"
-    
     @State var priorityJournalNameTitle = "Psychopatic Journal"
     @State var priorityLastEdited = "May 21th, 2022"
     @State var priorityProgressBarSize = 80.0
@@ -29,35 +27,30 @@ struct JournalView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Hi, \(userName)!")
-                    .multilineTextAlignment(.leading)
-                    .font(.largeTitle)
-                Spacer()
-            }
-            
             ScrollView {
                 VStack {
                     VStack (spacing: 30){
                         MainJournalCardView(journalNameTitle: $priorityJournalNameTitle, lastEdited: $priorityLastEdited, progressBarSize: $priorityProgressBarSize, progress: $priorityProgress)
                         
-                        LazyVGrid (columns: columns, spacing: 370){
-                            ForEach(0..<4) { index in
-                                if index == 3 {
-                                    ButtonMainJournalView()
-                                        .padding([.leading], 10)
-                                }
-                                else if index % 2 == 0 && index != 1 {
-                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
-                                        .padding([.trailing], 10)
-                                } else if index % 2 == 1 {
-                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
-                                        .padding([.leading], 10)
-                                }
-                            }
+                        LazyVGrid (columns: columns, spacing: 30){
+//                            ForEach(0..<6) { index in
+//                                if index % 2 == 0 && index != 1 {
+//                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
+//                                        .padding([.trailing], 10)
+//                                        .frame(height: 350)
+//                                } else if index % 2 == 1 {
+//                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
+//                                        .frame(height: 350)
+//                                        .padding([.leading], 10)
+//                                }
+//                            }
                                                         
                             
                         }
+
+                        ButtonMainJournalView()
+                            .frame(height: 210)
+                        
                         
                             
                         

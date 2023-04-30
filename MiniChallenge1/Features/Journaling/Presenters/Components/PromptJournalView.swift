@@ -9,24 +9,53 @@ import SwiftUI
 import PencilKit
 
 struct PromptJournalView: View {
+    @State private var showSheetPromptDone = false
+    @State private var promptNumberNow = 1
+    @State private var promptDescription = "Cobalah untuk madi atau mandi air hangat dan biarkan diri Anda rileks sepenuhnya. Bagaiman perasaan kamu ketika kamu bisa beristirahat dan memulihkan tenaga, meskipun ada banyak hal yang terjadi?"
     private var canvasView = PKCanvasView()
 
     var body: some View {
         NavigationStack {
             VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        showSheetPromptDone = true
+                    } label: {
+                        Text("Done")
+                            .font(body24)
+                    }
+                    .padding([.trailing, .leading], 24)
+                    .padding([.top, .bottom], 8)
+                    .background(AppColor.info)
+                    .foregroundColor(AppColor.neutral10)
+                    .cornerRadius(5)
+                    .sheet(isPresented: $showSheetPromptDone, content:
+                        ModalFinishPromptView.init)
+                    
+                    
+                }
+                .padding(.top, 20)
+                .padding(.trailing, 20)
+                
                 GeometryReader { geometry in
                     VStack (spacing: 30) {
                         HStack  {
                             Spacer()
                             Image(systemName: "chevron.left")
                                 .font(.title3)
-                            
-                            
                             Spacer()
-                            Text("Cobalah untuk madi atau mandi air hangat dan biarkan diri Anda rileks sepenuhnya. Bagaiman perasaan kamu ketika kamu bisa beristirahat dan memulihkan tenaga, meskipun ada banyak hal yang terjadi?")
-                                .multilineTextAlignment(.center)
-                                .frame(width: geometry.size.width * 0.6)
+                            VStack {
+                                Text("\(promptNumberNow)/20")
+                                    .font(promptNumber)
+                                    .foregroundColor(AppColor.green40)
+                                    .padding([.top, .bottom], 3)
+                                Text("\(promptDescription)")
+                                    .font(body24)
+                                    .multilineTextAlignment(.center)
+                                    .frame(width: geometry.size.width * 0.6)
                                 .font(.subheadline)
+                            }
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .font(.title3)
@@ -41,7 +70,7 @@ struct PromptJournalView: View {
                     
                     
                 }
-                .frame(height: 120)
+                .frame(height: 220)
                 .padding(10)
                 
                 CanvasView(canvasView: canvasView)

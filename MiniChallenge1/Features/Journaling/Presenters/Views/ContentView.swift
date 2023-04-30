@@ -40,17 +40,17 @@ struct ContentView: View {
                         .tabItem() {
                             Label("", systemImage: "book.closed")
                         }
-                        .background(AppColor.neutral20)
+//                        .background(AppColor.neutral20)
                     HistoryView()
                         .tabItem() {
                             Label("", systemImage: "clock.arrow.circlepath")
                         }
-                        .background(AppColor.neutral20)
+//                        .background(AppColor.neutral20)
                     ProfileView()
                         .tabItem() {
                             Label("", systemImage: "person")
                         }
-                        .background(AppColor.neutral20)
+//                        .background(AppColor.neutral20)
                 }
             }
             

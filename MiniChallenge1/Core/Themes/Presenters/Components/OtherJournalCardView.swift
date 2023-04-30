@@ -14,7 +14,7 @@ struct OtherJournalCardView: View {
     @Binding var progressBarSize: Double
     @Binding var progress: Double
     
-//    @Binding var colorJournal: Color
+    @State var ColorJournal: Color
     
     var body: some View {
         GeometryReader { geometry in
@@ -29,15 +29,15 @@ struct OtherJournalCardView: View {
                             VStack (spacing: 10) {
                                 HStack {
                                     Text("\(journalNameTitle)")
-                                        .font(.title)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(AppColor.neutral70)
+                                        .font(journalTitle)
+                                        .foregroundColor(AppColor.green60)
                                         .multilineTextAlignment(.leading)
                                     Spacer()
                                 }
                                 HStack {
                                     Text("Last Edited \(lastEdited)")
-                                        .foregroundColor(AppColor.green100)
+                                        .font(caption16)
+                                        .foregroundColor(AppColor.green30)
                                         .multilineTextAlignment(.leading)
                                     Spacer()
                                 }
@@ -51,8 +51,7 @@ struct OtherJournalCardView: View {
                                     CircularProgressBar(progressBar: $progress)
                                         .frame(width: progressBarSize, height: progressBarSize)
                                     Text("\(progress * 100, specifier: "%.0f")%")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
+                                        .font(bodyBold)
                                         .foregroundColor(AppColor.green60)
                                 }
                             }
@@ -79,8 +78,8 @@ struct OtherJournalCardView: View {
     }
 }
 
-//struct OtherJournalCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OtherJournalCardView(lastEdited: Binding.constant("Test"))
-//    }
-//}
+struct OtherJournalCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        OtherJournalCardView(journalNameTitle: .constant("Test"), lastEdited: .constant("27 Maret"), progressBarSize: .constant(100), progress: .constant(0.1), ColorJournal: AppColor.green10)
+    }
+}

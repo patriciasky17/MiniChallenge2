@@ -30,8 +30,8 @@ struct ButtonMainJournalView: View {
                     ModalCreateJournalView(showSheet: $showSheet)
                 }
             }
-            .frame(width: geometry.size.width, height: 350)
-            
+            .padding(50)
+            .frame(width: geometry.size.width)
             .background(AppColor.neutral10)
             .cornerRadius(10)
         }

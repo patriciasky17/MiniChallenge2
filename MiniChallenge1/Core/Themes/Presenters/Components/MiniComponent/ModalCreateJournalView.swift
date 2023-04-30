@@ -31,7 +31,8 @@ struct ModalCreateJournalView: View {
                     VStack{
                         HStack {
                             Text("\(journalName)")
-                                .font(.title)
+                                .font(body32)
+                                .foregroundColor(AppColor.green60)
                                 .multilineTextAlignment(.leading)
                             Spacer()
                         }
@@ -67,12 +68,11 @@ struct ModalCreateJournalView: View {
                         .disableAutocorrection(true)
                         .padding([.top, .bottom], 5)
                         .multilineTextAlignment(.center)
-                        .font(.title)
-                        .fontWeight(.semibold)
+                        .font(ax5body)
                         Spacer()
                     }
                     Divider()
-                        .frame(width: geometry.size.width * 0.6, height: 1)
+                        .frame(width: geometry.size.width * 0.8, height: 1)
                         .background(AppColor.neutral20)
                 }
                 
@@ -83,10 +83,10 @@ struct ModalCreateJournalView: View {
                         
                     } label: {
                         Text("Create")
-                            .font(.title3)
+                            .font(caption2)
                     }
                     .padding()
-                    .frame(width: geometry.size.width * 0.6)
+                    .frame(width: geometry.size.width * 0.8)
                     .background(AppColor.green60)
                     .foregroundColor(AppColor.neutral10)
                     .cornerRadius(10)

@@ -34,6 +34,9 @@ struct AppColor {
     static let neutral80 = Color("Neutral80")
     static let neutral90 = Color("Neutral90")
     static let neutral100 = Color("Neutral100")
+    
+    static let accent = Color("Accent")
+    static let darkAccent = Color("DarkAccent")
 
     private init() {}
 }
