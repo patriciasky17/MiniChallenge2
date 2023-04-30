@@ -20,6 +20,7 @@ struct OnboardingView: View {
                         .font(.title3)
                 }
                 .frame(width: 300)
+                .background(.clear)
                 VStack {
                     HStack(alignment: .top){
                         GeometryReader { geo in

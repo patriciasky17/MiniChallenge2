@@ -30,23 +30,27 @@ struct AssesmentView: View {
                                 Text("A")
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.brown)
+                                    .foregroundColor(AppColor.green50)
                             } .frame(width: 64, height: 64)
-                                .background(Color.primary.opacity(0.05))
+                                .background(AppColor.green20)
                             Text("Tidak Pernah")
                                 .font(.title2)
                                 .padding(8)
                             Spacer()
                         }
                         .padding(10)
+                        .overlay(
+                            Rectangle()
+                                .stroke(AppColor.green50, lineWidth: 1.5)
+                        )
                     HStack {
                         VStack(alignment: .center) {
                             Text("B")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(.brown)
+                                .foregroundColor(AppColor.green50)
                         } .frame(width: 64, height: 64)
-                            .background(Color.primary.opacity(0.05))
+                            .background(AppColor.green10.opacity(0.5))
                         Text("Jarang")
                             .font(.title2)
                             .padding(8)
@@ -58,9 +62,9 @@ struct AssesmentView: View {
                             Text("C")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(.brown)
+                                .foregroundColor(AppColor.green50)
                         } .frame(width: 64, height: 64)
-                            .background(Color.primary.opacity(0.05))
+                            .background(AppColor.green10.opacity(0.5))
                         Text("Terkadang")
                             .font(.title2)
                             .padding(8)
@@ -72,9 +76,9 @@ struct AssesmentView: View {
                             Text("D")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(.brown)
+                                .foregroundColor(AppColor.green50)
                         } .frame(width: 64, height: 64)
-                            .background(Color.primary.opacity(0.05))
+                            .background(AppColor.green10.opacity(0.5))
                         Text("Sering")
                             .font(.title2)
                             .padding(8)
@@ -92,13 +96,19 @@ struct AssesmentView: View {
                         selectedAnswer = ""
                     }
                 }) {
-                    Text("Next")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "chevron.right")
+                                .imageScale(.large)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 64, height: 64)
+                        }
+                        .background(AppColor.green50)
+                        .cornerRadius(48)
+                    }
+                    
                 }
                 .disabled(selectedAnswer.isEmpty)
                 .padding()

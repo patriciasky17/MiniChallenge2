@@ -10,6 +10,7 @@
 		42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */; };
 		67B0B82629FA5ACC003A982F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0B82529FA5ACC003A982F /* OnboardingView.swift */; };
 		67B0B82C29FB5CD3003A982F /* AssesmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0B82B29FB5CD3003A982F /* AssesmentView.swift */; };
+		67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0B83129FED7BE003A982F /* ProfileEditView.swift */; };
 		8B5BFB6C29EFE370002A2526 /* MiniChallenge1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6B29EFE370002A2526 /* MiniChallenge1App.swift */; };
 		8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6D29EFE370002A2526 /* ContentView.swift */; };
 		8B5BFB7029EFE371002A2526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5BFB6F29EFE371002A2526 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryJournalCardView.swift; sourceTree = "<group>"; };
 		67B0B82529FA5ACC003A982F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		67B0B82B29FB5CD3003A982F /* AssesmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentView.swift; sourceTree = "<group>"; };
+		67B0B83129FED7BE003A982F /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		8B5BFB6829EFE370002A2526 /* MiniChallenge1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5BFB6B29EFE370002A2526 /* MiniChallenge1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge1App.swift; sourceTree = "<group>"; };
 		8B5BFB6D29EFE370002A2526 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				8B5BFBE829F51293002A2526 /* JournalView.swift */,
 				8B5BFBEA29F512A0002A2526 /* HistoryView.swift */,
 				8B5BFBEC29F512AB002A2526 /* ProfileView.swift */,
+				67B0B83129FED7BE003A982F /* ProfileEditView.swift */,
 				8B63CE6D29FA64B000012A38 /* SplashScreen.swift */,
 				8B63CE6F29FA786C00012A38 /* PromptJournalView.swift */,
 				67B0B82529FA5ACC003A982F /* OnboardingView.swift */,
@@ -406,6 +409,7 @@
 				42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */,
 				8B63CE5A29F917A500012A38 /* CornerRadius+Ext.swift in Sources */,
 				8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */,
+				67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
 				8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */,
