@@ -60,7 +60,7 @@ struct ModalFinishPromptView: View {
             }
             .padding(20)
             .interactiveDismissDisabled()
-            
+            .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
         }
     }
 }

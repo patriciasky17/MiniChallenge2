@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileEditView: View {
+    @State var birthDate = Date.now
+    @State var profileName = "Nana Karisma"
+    
     var body: some View {
         VStack(alignment: .center, spacing: 24){
             Spacer()
@@ -32,16 +35,17 @@ struct ProfileEditView: View {
             HStack(spacing: 12) {
                 Text("Name")
                     .padding(8)
-                    .font(.title2)
-                Text("Nana Karisma")
-                    .padding(8)
-                    .font(.title2)
+                    .font(body24)
                 Spacer()
-                Image(systemName: "pencil")
-                    .font(Font.system(size: 24))
-                    .foregroundColor(.gray)
+                TextField(
+                  "Enter your journal name",
+                  text: $profileName,
+                  onEditingChanged: { changed in
+                    //code here
+                  }
+                )
+                .font(body24)
             }
-//            .frame(width: 600)
             .padding(12)
             .overlay(Rectangle().frame(height: 1).foregroundColor(.gray.opacity(0.5)), alignment: .bottom)
             
@@ -49,31 +53,27 @@ struct ProfileEditView: View {
                 Text("Birthday")
                     .padding(8)
                     .font(.title2)
-                Text("March 27, 2001")
-                    .padding(8)
-                    .font(.title2)
-                Spacer()
-                Image(systemName: "chevron.down")
-                    .font(Font.system(size: 24))
-                    .foregroundColor(.gray)
+
+                DatePicker("", selection: $birthDate, displayedComponents: .date)
+                    .datePickerStyle(WheelDatePickerStyle())
+
             }
-//            .frame(width: 600)
             .padding(12)
             .overlay(Rectangle().frame(height: 1).foregroundColor(.gray.opacity(0.5)), alignment: .bottom)
             Spacer()
             Button(action: {
-                        // Action for Save button
-                        print("Save button tapped!")
-                    }) {
-                        Text("Save")
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 16)
-                            .background(AppColor.green50)
-                            .cornerRadius(8)
-                    }
+                // Action for Save button
+                print("Save button tapped!")
+            }) {
+                Text("Save")
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 16)
+                    .background(AppColor.green50)
+                    .cornerRadius(8)
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
