@@ -34,6 +34,7 @@ struct OnboardingView: View {
                         VStack(alignment: .leading){
                             Text("Help us Personalize your Journal")
                                 .font(title1)
+                                .fontWeight(.medium)
                                 .padding(.bottom, 16)
                                 .foregroundColor(AppColor.green50)
                             Text("Suatu copywriting yang menunjukkan ini buat orang broken home")
