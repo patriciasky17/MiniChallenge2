@@ -22,7 +22,7 @@ struct OtherJournalCardView: View {
                 NavigationLink (destination: PromptJournalView()) {
                     HStack (spacing: 0) {
                         RoundedRectangle(cornerRadius: 0)
-                            .foregroundColor(AppColor.success)
+                            .foregroundColor(ColorJournal)
                             .frame(width: 20, height: 350)
                             .cornerRadius(20, corners: [.topLeft, .bottomLeft])
                         VStack {

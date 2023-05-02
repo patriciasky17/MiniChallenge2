@@ -33,17 +33,17 @@ struct JournalView: View {
                         MainJournalCardView(journalNameTitle: $priorityJournalNameTitle, lastEdited: $priorityLastEdited, progressBarSize: $priorityProgressBarSize, progress: $priorityProgress)
                         
                         LazyVGrid (columns: columns, spacing: 30){
-//                            ForEach(0..<6) { index in
-//                                if index % 2 == 0 && index != 1 {
-//                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
-//                                        .padding([.trailing], 10)
-//                                        .frame(height: 350)
-//                                } else if index % 2 == 1 {
-//                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress)
-//                                        .frame(height: 350)
-//                                        .padding([.leading], 10)
-//                                }
-//                            }
+                            ForEach(0..<6) { index in
+                                if index % 2 == 0 && index != 1 {
+                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress, ColorJournal: AppColor.success)
+                                        .padding([.trailing], 10)
+                                        .frame(height: 350)
+                                } else if index % 2 == 1 {
+                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress, ColorJournal: AppColor.info)
+                                        .frame(height: 350)
+                                        .padding([.leading], 10)
+                                }
+                            }
                                                         
                             
                         }
