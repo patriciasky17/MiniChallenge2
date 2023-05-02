@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C9A7572A00161500745583 /* FontSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7562A00161500745583 /* FontSystem.swift */; };
+		42C9A7592A00168A00745583 /* ModalFinishPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */; };
 		42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */; };
 		67B0B82629FA5ACC003A982F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0B82529FA5ACC003A982F /* OnboardingView.swift */; };
 		67B0B82C29FB5CD3003A982F /* AssesmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B0B82B29FB5CD3003A982F /* AssesmentView.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42C9A7562A00161500745583 /* FontSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSystem.swift; sourceTree = "<group>"; };
+		42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFinishPromptView.swift; sourceTree = "<group>"; };
 		42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryJournalCardView.swift; sourceTree = "<group>"; };
 		67B0B82529FA5ACC003A982F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		67B0B82B29FB5CD3003A982F /* AssesmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42C9A7552A00161500745583 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				42C9A7562A00161500745583 /* FontSystem.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
 		8B5BFB5F29EFE370002A2526 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +193,7 @@
 		8B5BFBB629F28C5B002A2526 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				42C9A7552A00161500745583 /* Typography */,
 				8B5BFBC029F28FF7002A2526 /* Colors */,
 				8B5BFBC129F28FFB002A2526 /* Presenters */,
 			);
@@ -324,6 +337,7 @@
 		8B63CE6829F99DBA00012A38 /* MiniComponent */ = {
 			isa = PBXGroup;
 			children = (
+				42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */,
 				8B63CE5729F913DD00012A38 /* CircularProgressBar.swift */,
 				8B63CE6929F99E3000012A38 /* ModalCreateJournalView.swift */,
 			);
@@ -412,6 +426,7 @@
 				67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
+				42C9A7572A00161500745583 /* FontSystem.swift in Sources */,
 				8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */,
 				8B5BFBE129F2C85A002A2526 /* JournalingViewModel.swift in Sources */,
 				8B63CE7029FA786C00012A38 /* PromptJournalView.swift in Sources */,
@@ -426,6 +441,7 @@
 				67B0B82C29FB5CD3003A982F /* AssesmentView.swift in Sources */,
 				8B5BFBBE29F28FCC002A2526 /* CoreDataManager.swift in Sources */,
 				8B5BFBDF29F2C849002A2526 /* JournalingRepository.swift in Sources */,
+				42C9A7592A00168A00745583 /* ModalFinishPromptView.swift in Sources */,
 				8B5BFB6C29EFE370002A2526 /* MiniChallenge1App.swift in Sources */,
 				8B5BFBED29F512AB002A2526 /* ProfileView.swift in Sources */,
 				8B5BFBEB29F512A0002A2526 /* HistoryView.swift in Sources */,

@@ -32,29 +32,71 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            TabView{
+        //        NavigationStack {
+        //            TabView{
+        //                Group {
+        //                    JournalView()
+        //                        .badge(2)
+        //                        .tabItem() {
+        //                            Label("", systemImage: "book.closed")
+        //                        }
+        ////                        .background(AppColor.neutral20)
+        //                    HistoryView()
+        //                        .tabItem() {
+        //                            Label("", systemImage: "clock.arrow.circlepath")
+        //                        }
+        ////                        .background(AppColor.neutral20)
+        //                    ProfileView()
+        //                        .tabItem() {
+        //                            Label("", systemImage: "person")
+        //                        }
+        ////                        .background(AppColor.neutral20)
+        //                }
+        //            }
+        //
+        //            .toolbarColorScheme(.light, for: .tabBar)
+        //        }
+        //    }
+        
+        NavigationView {
+            GeometryReader { geometry in
                 Group {
-                    JournalView()
-                        .badge(2)
-                        .tabItem() {
-                            Label("", systemImage: "book.closed")
+                    VStack (alignment: .leading, spacing: 50){
+                        NavigationLink(destination: JournalView()) {
+                            HStack {
+                                Label("", systemImage: "book.closed")
+                                    .font(.system(size: 32))
+                                Text("Journals")
+                                    .font(.system(size: 20))
+                            }
                         }
-//                        .background(AppColor.neutral20)
-                    HistoryView()
-                        .tabItem() {
-                            Label("", systemImage: "clock.arrow.circlepath")
+                        NavigationLink(destination: HistoryView()) {
+                            HStack{
+                                Label("", systemImage: "clock.arrow.circlepath")
+                                    .font(.system(size: 28))
+                                Text("History")
+                                    .font(.system(size: 20))
+                            }
                         }
-//                        .background(AppColor.neutral20)
-                    ProfileView()
-                        .tabItem() {
-                            Label("", systemImage: "person")
+                        NavigationLink(destination: ProfileView()) {
+                            HStack{
+                                Label("", systemImage: "person")
+                                    .font(.system(size: 32))
+                                Text("Profile")
+                                    .font(.system(size: 20))
+                            }
                         }
-//                        .background(AppColor.neutral20)
+                    }
                 }
+                .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
+                .padding(.top, (geometry.size.height - (12 * 100)) / 2)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Image(systemName: "sidebar.left")
+                    }
             }
-            
-            .toolbarColorScheme(.light, for: .tabBar)
+            }
+            JournalView()
         }
     }
 }
