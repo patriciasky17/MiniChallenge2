@@ -12,36 +12,43 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             GeometryReader { geometry in
                 ZStack{
                     List {
                         NavigationLink(destination: JournalView()) {
-                            HStack {
+                            HStack (spacing: 20) {
                                 Label("", systemImage: "book.closed")
                                     .font(.system(size: 32))
                                 Text("Journals")
                                     .font(.system(size: 20))
                             }
-                        }.padding([.top, .bottom], 20)
+                            .padding([.leading], 20)
+                        }
+                        .padding([.top, .bottom], 10)
                         
                         NavigationLink(destination: HistoryView()) {
-                            HStack{
-                                Label("", systemImage: "clock.arrow.circlepath")
+                            HStack (spacing: 20){
+                                Label("", systemImage: "books.vertical")
                                     .font(.system(size: 28))
                                 Text("History")
                                     .font(.system(size: 20))
                             }
-                        }.padding([.top, .bottom], 20)
+                            .padding([.leading], 20)
+                        }
+                        .padding([.top, .bottom], 10)
+                        
                         
                         NavigationLink(destination: ProfileView()) {
-                            HStack{
-                                Label("", systemImage: "person")
-                                    .font(.system(size: 32))
+                            HStack (spacing: 20){
+                                Label("", systemImage: "list.clipboard")
+                                    .font(.system(size: 28))
                                 Text("Profile")
                                     .font(.system(size: 20))
                             }
-                        }.padding([.top, .bottom], 20)
+                            .padding([.leading], 20)
+                        }
+                        .padding([.top, .bottom], 10)
                         
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height)
@@ -57,9 +64,12 @@ struct ContentView: View {
                         .padding(.top, (geometry.size.height / 2))
                 }
             }
-            
-            JournalView()
+        } detail: {
+            VStack {
+                JournalView()
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

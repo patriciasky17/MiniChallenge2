@@ -41,7 +41,7 @@ struct OnboardingView: View {
                                 .font(body24)
                                 .foregroundColor(AppColor.green40)
                         }
-                        .frame(width: 305)
+                        .frame(width: 315)
                         Spacer()
                     }
                     
@@ -49,38 +49,22 @@ struct OnboardingView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            NavigationLink(destination: AssesmentView()) {
-                                ZStack {
-                                    Circle()
-                                        .frame(width: 100)
-                                        .foregroundColor(AppColor.green60)
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(AppColor.neutral10)
-                                        .font(.system(size: 30))
-                                }
-                                    
-                            }
+                            CircleButtonNext(destination: PreSelfAssesment())
                         }
                     }
                 }
                 Spacer()
             }
             .padding([.leading, .trailing, .top, .bottom], 40)
-        .background(AppColor.neutral20)
-        }
+            .background(AppColor.neutral20)
         }
     }
+}
     
-    struct OnboardingView_Previews: PreviewProvider {
-        static var previews: some View {
-            OnboardingView()
-        }
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView()
     }
+}
 
-
-//                        .frame(maxWidth: .infinity)
-                    //                    .frame(maxWidth: .infinity)
-                    //                        .frame(width: 300)
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fill)
-//                            .scaledToFit()

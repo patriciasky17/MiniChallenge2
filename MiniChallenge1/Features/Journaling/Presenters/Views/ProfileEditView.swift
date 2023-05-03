@@ -21,14 +21,13 @@ struct ProfileEditView: View {
                     .clipShape(Circle())
                     .foregroundColor(AppColor.neutral70)
                     .padding(.bottom, 12)
-                ZStack{
-                    Text("Change Image")
-                        .font(.title3)
-                        .foregroundColor(AppColor.green90)
-                        .padding()
-                        .background(AppColor.green10)
-                        .cornerRadius(10)
-                    }
+                Text("Change Image")
+                    .font(.title3)
+                    .foregroundColor(AppColor.green90)
+                    .padding()
+                    .background(AppColor.green10)
+                    .cornerRadius(10)
+                    
                 }
             Spacer()
                 .frame(height: 48)

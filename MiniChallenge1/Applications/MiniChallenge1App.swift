@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct MiniChallenge1App: App {
+    @State var hasUserOpenedAppBefore: Bool = false
+
     var body: some Scene {
         WindowGroup {
             SplashScreen()
@@ -16,3 +18,5 @@ struct MiniChallenge1App: App {
         }
     }
 }
+
+// pake user default

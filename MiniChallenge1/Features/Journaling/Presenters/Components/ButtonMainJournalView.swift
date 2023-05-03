@@ -21,9 +21,8 @@ struct ButtonMainJournalView: View {
                     VStack (spacing: 30) {
                         Image(systemName: "plus")
                             .font(.system(size: 56))
-                        Text("Create Journal")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                        Text("Create New Journal")
+                            .font(body24)
                     }
                 }
                 .sheet(isPresented: $showSheet) {

@@ -15,7 +15,7 @@ struct SplashScreen: View {
     
     var body: some View {
         if isVisible {
-            ContentView()
+//            OnboardingView()
         } else {
             VStack (spacing: 50) {
                 ZStack {
@@ -28,7 +28,7 @@ struct SplashScreen: View {
                     }
                 }
                 .onAppear {
-                    let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                    let timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
                         withAnimation {
                             currentIndex += 1
                             if currentIndex > imagePaths.count-2 {
@@ -38,12 +38,10 @@ struct SplashScreen: View {
                     }
                     timer.fire()
                 }
-                Text("Clover")
-                    .font(.title)
-                    .fontWeight(.bold)
+                Image("Fragments")
             }
             .onAppear{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.99) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     withAnimation(.easeInOut(duration: 1)){
                         isVisible = true
                     }
