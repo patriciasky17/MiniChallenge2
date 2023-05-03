@@ -35,6 +35,7 @@ struct PreSelfAssesment: View {
                             Spacer()
                         }
                     }
+                    .padding([.trailing, .leading], 40)
                     .frame(maxWidth: .infinity)
                     Spacer()
                 }
@@ -60,11 +61,12 @@ struct PreSelfAssesment: View {
                                 .foregroundColor(AppColor.neutral10)
                                 .font(.system(size: 30))
                         }
+                        .padding([.trailing, .leading], 40)
                     }
                 }
             }
         }
-        .padding([.leading, .trailing, .top, .bottom], 40)
+        .padding([.top, .bottom], 40)
         .background(AppColor.neutral10)
     }
 }
