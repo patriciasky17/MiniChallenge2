@@ -12,78 +12,53 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        //        NavigationStack {
-        //            TabView{
-        //                Group {
-        //                    JournalView()
-        //                        .badge(2)
-        //                        .tabItem() {
-        //                            Label("", systemImage: "book.closed")
-        //                        }
-        //                        .background(AppColor.neutral20)
-        //                    HistoryView()
-        //                        .tabItem() {
-        //                            Label("", systemImage: "clock.arrow.circlepath")
-        //                        }
-        //                        .background(AppColor.neutral20)
-        //                    ProfileView()
-        //                        .tabItem() {
-        //                            Label("", systemImage: "person")
-        //                        }
-        //                        .background(AppColor.neutral20)
-        //                }
-        //            }
-        //
-        //            .toolbarColorScheme(.light, for: .tabBar)
-        //        }
-        //    }
-        
-        ZStack {
-            NavigationView {
-                GeometryReader { geometry in
+        NavigationView {
+            GeometryReader { geometry in
+                ZStack{
                     List {
-                            NavigationLink(destination: JournalView()) {
-                                HStack {
-                                    Label("", systemImage: "book.closed")
-                                        .font(.system(size: 32))
-                                    Text("Journals")
-                                        .font(.system(size: 20))
-                                }
-                            }.padding(.bottom, 20)
-                        
-                            NavigationLink(destination: HistoryView()) {
-                                HStack{
-                                    Label("", systemImage: "clock.arrow.circlepath")
-                                        .font(.system(size: 28))
-                                    Text("History")
-                                        .font(.system(size: 20))
-                                }
-                            }.padding(.bottom, 20)
-                        
-                            NavigationLink(destination: ProfileView()) {
-                                HStack{
-                                    Label("", systemImage: "person")
-                                        .font(.system(size: 32))
-                                    Text("Profile")
-                                        .font(.system(size: 20))
-                                }
+                        NavigationLink(destination: JournalView()) {
+                            HStack {
+                                Label("", systemImage: "book.closed")
+                                    .font(.system(size: 32))
+                                Text("Journals")
+                                    .font(.system(size: 20))
                             }
-                        Spacer()
-                        VStack (alignment: .center){
-                            HStack (alignment: .center){
-                                Image("clover sidebar")
+                        }.padding([.top, .bottom], 20)
+                        
+                        NavigationLink(destination: HistoryView()) {
+                            HStack{
+                                Label("", systemImage: "clock.arrow.circlepath")
+                                    .font(.system(size: 28))
+                                Text("History")
+                                    .font(.system(size: 20))
                             }
-                        }
+                        }.padding([.top, .bottom], 20)
+                        
+                        NavigationLink(destination: ProfileView()) {
+                            HStack{
+                                Label("", systemImage: "person")
+                                    .font(.system(size: 32))
+                                Text("Profile")
+                                    .font(.system(size: 20))
+                            }
+                        }.padding([.top, .bottom], 20)
                         
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .padding(.top, (geometry.size.height - (4 * 100)) / 2)
                     .listStyle(SidebarListStyle())
                     .scrollDisabled(true)
+                    .background(AppColor.neutral20)
+                    
+                    Image("clover sidebar")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 150)
+                        .padding(.top, (geometry.size.height / 2))
                 }
-                JournalView()
             }
             
+            JournalView()
         }
     }
 }
