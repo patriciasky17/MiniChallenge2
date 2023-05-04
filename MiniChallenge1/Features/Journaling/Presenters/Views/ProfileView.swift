@@ -34,8 +34,6 @@ struct ProfileView: View {
                     SelfAssessmentResult()
                     
                     Spacer()
-                    .frame(height: 64)
-                    .layoutPriority(1)
                     
                     HStack {
                         Button {

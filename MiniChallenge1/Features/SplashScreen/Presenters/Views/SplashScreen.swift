@@ -46,6 +46,7 @@ struct SplashScreen: View {
                         isVisible = true
                     }
                 }
+                
             }
         }
 

@@ -11,7 +11,8 @@ struct MultipleChoices: View {
     let letters: [String] = ["A", "B", "C", "D"]
     let choices: [String] = ["Tidak pernah", "Jarang", "Terkadang", "Sering"]
     
-    @State private var selectedIndex: Int?
+    @Binding var selectedIndex: Int
+    @Binding var selectedAnswer: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -21,6 +22,8 @@ struct MultipleChoices: View {
                    isSelected: selectedIndex == index,
                    onSelect: {
                     selectedIndex = index
+                    selectedAnswer = choices[index]
+                    print(selectedAnswer)
                 })
             }
         }
@@ -29,6 +32,6 @@ struct MultipleChoices: View {
 
 struct MultipleChoices_Previews: PreviewProvider {
     static var previews: some View {
-        MultipleChoices()
+        MultipleChoices(selectedIndex: .constant(2), selectedAnswer: .constant("Tidak Pernah"))
     }
 }

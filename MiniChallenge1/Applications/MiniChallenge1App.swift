@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct MiniChallenge1App: App {
-    @State var hasUserOpenedAppBefore: Bool = false
+    @State var hasDoneTheAssessment: Bool = false
 
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
-//            ContentView()
+            if hasDoneTheAssessment {
+                ContentView()
+            } else {
+                SplashScreen()
+            }
         }
     }
 }

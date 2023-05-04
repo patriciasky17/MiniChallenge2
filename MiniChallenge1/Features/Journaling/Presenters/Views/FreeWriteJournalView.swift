@@ -6,10 +6,68 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct FreeWriteJournalView: View {
+    @State private var showSheetPromptDone = false
+    @State private var showQuotesModal = false
+    @State private var goToHome = false
+    
+    @State private var promptNumberNow = 1
+    @State private var overallPage = 100
+    
+    private var canvasView = PKCanvasView()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            NavigationStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button {
+                            showSheetPromptDone = true
+                        } label: {
+                            Text("Done")
+                                .font(body24)
+                        }
+                        .padding([.trailing, .leading], 24)
+                        .padding([.top, .bottom], 8)
+                        .background(AppColor.info)
+                        .foregroundColor(AppColor.neutral10)
+                        .cornerRadius(5)
+                    }
+                    .padding(.trailing, 20)
+                    
+                    
+                    HStack {
+                        NumberingPage(promptNumberNow: $promptNumberNow, overallPage:$overallPage)
+                            
+                    }
+                    .padding([.leading, .trailing], 20)
+                        
+                    
+                    CanvasView(canvasView: canvasView)
+                }
+                //            .border(.red)
+                .navigationBarBackButtonHidden()
+                
+                
+            }
+            
+            if showSheetPromptDone {
+                ModalConfirmationFinishPromptJournal( showSheetPromptDone: $showSheetPromptDone, showQuotesModal: $showQuotesModal)
+                    .background(Color.black.opacity(0.5))
+                    .edgesIgnoringSafeArea(.all)
+            } else if showQuotesModal {
+                ModalFinishPromptView(showQuotesModal: $showQuotesModal, showSheetPromptDone: $showSheetPromptDone, goToHome: $goToHome)
+                    .background(Color.black.opacity(0.5))
+                    .edgesIgnoringSafeArea(.all)
+            } else if !showSheetPromptDone && !showQuotesModal && goToHome{
+                JournalView()
+            }
+        }
+
+        
     }
 }
 

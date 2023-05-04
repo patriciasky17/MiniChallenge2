@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct AssesmentView: View {
+    @State private var selfAssessmentQuestions: [String] = ["Apakah demikian?", "Apakah kamu sering terlibat dalam aktivitas yang sejalan dengan nilai dan keyakinan kamu?"]
     @State private var selectedAnswer = ""
+    @State private var selectedIndex = -1
     @State private var step = 1
-    let totalSteps = 9
+    var totalSteps: Int = 0
+    
+    init() {
+        totalSteps = selfAssessmentQuestions.count
+    }
+    
+    var currentQuestion: String {
+        selfAssessmentQuestions[step-1]
+    }
 
     var body: some View {
         NavigationStack {
@@ -21,19 +31,25 @@ struct AssesmentView: View {
                         .font(body32)
                 }
                 Spacer()
-                Text("Apakah kamu sering terlibat dalam aktivitas yang sejalan dengan nilai dan keyakinan kamu?")
+                Text("\(currentQuestion)")
                     .font(subheadline)
                     .foregroundColor(AppColor.green60)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .multilineTextAlignment(.leading)
                 HStack {
-                    MultipleChoices()
+                    MultipleChoices(selectedIndex: $selectedIndex, selectedAnswer: $selectedAnswer)
                     Spacer()
                 }
                 .padding()
                 
                 Spacer()
                 
-                if step < totalSteps {
+                if step == totalSteps {
+                    HStack {
+                        Spacer()
+                        CircleButtonNext(destination: ContentView())
+                    }
+                } else {
                     Button(action: {
                         getToTheNextStep()
                     }) {
@@ -51,13 +67,8 @@ struct AssesmentView: View {
                         
                     }
                     .navigationBarBackButtonHidden(true)
-    //                .disabled(selectedAnswer.isEmpty)
+                    .disabled(selectedAnswer.isEmpty)
                     .padding()
-                } else {
-                    HStack {
-                        Spacer()
-                        CircleButtonNext(destination: ContentView())
-                    }
                 }
                 
                 
@@ -68,9 +79,12 @@ struct AssesmentView: View {
     }
     
     func getToTheNextStep() {
-        if step < totalSteps {
+        if step == totalSteps {
+
+        } else {
             step += 1
             selectedAnswer = ""
+            selectedIndex = -1
         }
     }
 }
