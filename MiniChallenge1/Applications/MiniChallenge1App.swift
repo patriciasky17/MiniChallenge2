@@ -9,14 +9,17 @@ import SwiftUI
 
 @main
 struct MiniChallenge1App: App {
-    @State var hasDoneTheAssessment: Bool = false
-
+    let isOpened = UserDefaultForUser().isCompletedAssessment
+    let userDefaultForUser = UserDefaultForUser()
+    
     var body: some Scene {
         WindowGroup {
-            if hasDoneTheAssessment {
+            if isOpened {
                 ContentView()
+                    .environmentObject(userDefaultForUser)
             } else {
                 SplashScreen()
+                    .environmentObject(userDefaultForUser)
             }
         }
     }

@@ -27,6 +27,7 @@ struct CircleButtonNext<Destination: View>: View {
 
 struct CircleButtonNext_Previews: PreviewProvider {
     static var previews: some View {
+        let userDefaultForUser = UserDefaultForUser()
         CircleButtonNext(destination: PreSelfAssesment())
     }
 }

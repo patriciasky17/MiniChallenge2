@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PreSelfAssesment: View {
+    @EnvironmentObject var userDefaultForUser: UserDefaultForUser
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -71,6 +73,7 @@ struct PreSelfAssesment: View {
 
 struct PreSelfAssesment_Previews: PreviewProvider {
     static var previews: some View {
+        let userDefaultForUser = UserDefaultForUser()
         PreSelfAssesment()
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    @EnvironmentObject var userDefaultForUser: UserDefaultForUser
     @State private var isVisible = false
     @State var currentIndex = 0
     
@@ -56,6 +57,7 @@ struct SplashScreen: View {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
+        let userDefaultForUser = UserDefaultForUser()
         SplashScreen()
     }
 }

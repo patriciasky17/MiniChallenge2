@@ -52,6 +52,7 @@
 		8B7572842A02D86700055090 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572832A02D86700055090 /* CanvasView.swift */; };
 		8B7572862A02E29000055090 /* SelfAssessmentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572852A02E29000055090 /* SelfAssessmentResult.swift */; };
 		8B7572882A0395AB00055090 /* NumberingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572872A0395AB00055090 /* NumberingPage.swift */; };
+		8BD7D0962A03FD800008015A /* UserDefaultForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7D0952A03FD800008015A /* UserDefaultForUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		8B7572832A02D86700055090 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		8B7572852A02E29000055090 /* SelfAssessmentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAssessmentResult.swift; sourceTree = "<group>"; };
 		8B7572872A0395AB00055090 /* NumberingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberingPage.swift; sourceTree = "<group>"; };
+		8BD7D0952A03FD800008015A /* UserDefaultForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultForUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		8B5BFBB029F28BD3002A2526 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7D0952A03FD800008015A /* UserDefaultForUser.swift */,
 				8B5BFB6D29EFE370002A2526 /* ContentView.swift */,
 				8B5BFB6B29EFE370002A2526 /* MiniChallenge1App.swift */,
 			);
@@ -558,6 +561,7 @@
 				42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */,
 				8B63CE5A29F917A500012A38 /* CornerRadius+Ext.swift in Sources */,
 				8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */,
+				8BD7D0962A03FD800008015A /* UserDefaultForUser.swift in Sources */,
 				67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */,
 				8B75726C2A02528100055090 /* MultipleChoices.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,

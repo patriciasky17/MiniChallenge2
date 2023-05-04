@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct JournalView: View {
+    @EnvironmentObject var userDefaultForUser: UserDefaultForUser
+    
     @State var priorityJournalNameTitle = "Psychopatic Journal"
     @State var priorityLastEdited = "May 21th, 2022"
     @State var priorityProgressBarSize = 80.0

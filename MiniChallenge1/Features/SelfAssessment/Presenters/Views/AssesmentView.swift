@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AssesmentView: View {
+    @EnvironmentObject var userDefaultForUser: UserDefaultForUser
+    
     @State private var selfAssessmentQuestions: [String] = ["Apakah demikian?", "Apakah kamu sering terlibat dalam aktivitas yang sejalan dengan nilai dan keyakinan kamu?"]
     @State private var selectedAnswer = ""
     @State private var selectedIndex = -1
     @State private var step = 1
-    var totalSteps: Int = 0
-    
-    init() {
-        totalSteps = selfAssessmentQuestions.count
+    var totalSteps: Int {
+        selfAssessmentQuestions.count
     }
     
     var currentQuestion: String {
@@ -47,7 +47,18 @@ struct AssesmentView: View {
                 if step == totalSteps {
                     HStack {
                         Spacer()
-                        CircleButtonNext(destination: ContentView()).disabled(selectedAnswer.isEmpty)
+                        if selectedAnswer.isEmpty {
+                            CircleButtonNext(destination: ContentView()).disabled(selectedAnswer.isEmpty)
+                        } else {
+                            CircleButtonNext(destination: ContentView())
+                            .simultaneousGesture(TapGesture().onEnded{
+                                
+                                UserDefaults.standard.set(true, forKey: "isCompletedAssessment")
+                                userDefaultForUser.isCompletedAssessment = UserDefaults.standard.bool(forKey: "isCompletedAssessment")
+                                print(userDefaultForUser.isCompletedAssessment)
+                            })
+                        }
+                        
                     }
                 } else {
                     Button(action: {
@@ -92,6 +103,7 @@ struct AssesmentView: View {
 
 struct AssesmentView_Previews: PreviewProvider {
     static var previews: some View {
+        let userDefaultForUser = UserDefaultForUser()
         AssesmentView()
     }
 }

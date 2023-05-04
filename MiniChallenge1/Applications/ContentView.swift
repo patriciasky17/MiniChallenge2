@@ -10,6 +10,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userDefaultForUser: UserDefaultForUser
     
     var body: some View {
         NavigationSplitView {
@@ -75,6 +76,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        let userDefaultForUser = UserDefaultForUser()
         ContentView()
     }
 }
