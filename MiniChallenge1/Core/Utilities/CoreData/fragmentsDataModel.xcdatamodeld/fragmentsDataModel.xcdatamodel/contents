@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPriority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pageDone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="journal_to_page" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="page_to_journal" inverseEntity="Page"/>
+        <relationship name="journal_to_prompt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prompt" inverseName="prompt_to_journal" inverseEntity="Prompt"/>
+    </entity>
+    <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="pageContent" optional="YES" attributeType="Transformable"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="page_to_journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="journal_to_page" inverseEntity="Journal"/>
+        <relationship name="page_to_prompt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Prompt" inverseName="prompt_to_page" inverseEntity="Prompt"/>
+    </entity>
+    <entity name="Prompt" representedClassName="Prompt" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="promptContent" optional="YES" attributeType="String"/>
+        <attribute name="quoteContent" optional="YES" attributeType="String"/>
+        <relationship name="prompt_to_journal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Journal" inverseName="journal_to_prompt" inverseEntity="Journal"/>
+        <relationship name="prompt_to_page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="page_to_prompt" inverseEntity="Page"/>
+    </entity>
+    <entity name="SelfAssessmentAnswer" representedClassName="SelfAssessmentAnswer" syncable="YES" codeGenerationType="class">
+        <attribute name="answerContent" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="answer_to_question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentQuestion" inverseName="question_to_answer" inverseEntity="SelfAssessmentQuestion"/>
+    </entity>
+    <entity name="SelfAssessmentCategory" representedClassName="SelfAssessmentCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category_to_question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentQuestion" inverseName="question_to_category" inverseEntity="SelfAssessmentQuestion"/>
+        <relationship name="category_to_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentResult" inverseName="result_to_category" inverseEntity="SelfAssessmentResult"/>
+    </entity>
+    <entity name="SelfAssessmentQuestion" representedClassName="SelfAssessmentQuestion" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="questionContent" optional="YES" attributeType="String"/>
+        <relationship name="question_to_answer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentAnswer" inverseName="answer_to_question" inverseEntity="SelfAssessmentAnswer"/>
+        <relationship name="question_to_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentCategory" inverseName="category_to_question" inverseEntity="SelfAssessmentCategory"/>
+    </entity>
+    <entity name="SelfAssessmentResult" representedClassName="SelfAssessmentResult" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="result_to_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SelfAssessmentCategory" inverseName="category_to_result" inverseEntity="SelfAssessmentCategory"/>
+    </entity>
+</model>

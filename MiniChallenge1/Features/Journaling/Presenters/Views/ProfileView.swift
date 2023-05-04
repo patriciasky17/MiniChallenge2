@@ -36,17 +36,19 @@ struct ProfileView: View {
                     Spacer()
                     
                     HStack {
-                        Button {
-                            
-                        } label: {
-                            Text("Retake the test")
-                                .font(caption2)
+                        NavigationLink(destination: AssesmentView()) {
+                            VStack (spacing: 20) {
+                                Text("Retake the test")
+                                    .font(caption2)
+                            }
+                            .padding([.leading], 20)
+                            .padding()
+                            .frame(width: geometry.size.width * 0.5)
+                            .background(AppColor.green60)
+                            .foregroundColor(AppColor.neutral10)
+                            .cornerRadius(10)
                         }
-                        .padding()
-                        .frame(width: geometry.size.width * 0.5)
-                        .background(AppColor.green60)
-                        .foregroundColor(AppColor.neutral10)
-                        .cornerRadius(10)
+                        .padding([.top, .bottom], 10)
                     }
                     
                     

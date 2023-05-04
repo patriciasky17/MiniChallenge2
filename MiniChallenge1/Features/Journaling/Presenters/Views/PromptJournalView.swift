@@ -40,7 +40,12 @@ struct PromptJournalView: View {
                     .frame(height: 220)
                     .padding([.leading, .trailing], 20)
                     
-                    CanvasView(canvasView: canvasView)
+                    if !showSheetPromptDone && !showQuotesModal && goToHome {
+                        
+                    } else {
+                        CanvasView(canvasView: canvasView)
+                    }
+                    
                 }
                 //            .border(.red)
                 .navigationBarBackButtonHidden()
