@@ -47,7 +47,7 @@ struct AssesmentView: View {
                 if step == totalSteps {
                     HStack {
                         Spacer()
-                        CircleButtonNext(destination: ContentView())
+                        CircleButtonNext(destination: ContentView()).disabled(selectedAnswer.isEmpty)
                     }
                 } else {
                     Button(action: {
