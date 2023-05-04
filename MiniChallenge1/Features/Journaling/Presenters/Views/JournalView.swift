@@ -36,9 +36,9 @@ struct JournalView: View {
                             LazyVGrid (columns: columns, spacing: 30){
                                 ForEach(0..<6) { index in
                                     if index % 2 == 0 && index != 1 {
-                                        OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress, ColorJournal: AppColor.success)
-                                            .padding([.trailing], 10)
-                                            .frame(height: 350)
+                                    OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress, ColorJournal: AppColor.success)
+                                        .padding([.trailing], 10)
+                                        .frame(height: 350)
                                     } else if index % 2 == 1 {
                                         OtherJournalCardView(journalNameTitle: $journalNameTitle, lastEdited: $lastEdited, progressBarSize: $progressBarSize, progress: $progress, ColorJournal: AppColor.info)
                                             .frame(height: 350)
@@ -66,7 +66,7 @@ struct JournalView: View {
                 Spacer()
             }
             .padding([.leading, .trailing], 40)
-            .padding([.top], 10)
+            .padding([.top], 20)
             .background(AppColor.neutral20)
             .navigationBarBackButtonHidden(true)
         }

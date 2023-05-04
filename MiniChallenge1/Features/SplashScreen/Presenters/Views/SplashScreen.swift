@@ -15,7 +15,7 @@ struct SplashScreen: View {
     
     var body: some View {
         if isVisible {
-//            OnboardingView()
+            OnboardingView()
         } else {
             VStack (spacing: 50) {
                 ZStack {

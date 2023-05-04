@@ -10,41 +10,55 @@ import PencilKit
 
 struct PromptJournalView: View {
     @State private var showSheetPromptDone = false
+    @State private var showQuotesModal = false
+    @State private var goToHome = false
     private var canvasView = PKCanvasView()
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        showSheetPromptDone = true
-                    } label: {
-                        Text("Done")
-                            .font(body24)
+        ZStack {
+            NavigationStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button {
+                            showSheetPromptDone = true
+                        } label: {
+                            Text("Done")
+                                .font(body24)
+                        }
+                        .padding([.trailing, .leading], 24)
+                        .padding([.top, .bottom], 8)
+                        .background(AppColor.info)
+                        .foregroundColor(AppColor.neutral10)
+                        .cornerRadius(5)
                     }
-                    .padding([.trailing, .leading], 24)
-                    .padding([.top, .bottom], 8)
-                    .background(AppColor.info)
-                    .foregroundColor(AppColor.neutral10)
-                    .cornerRadius(5)
-                    .sheet(isPresented: $showSheetPromptDone, content:
-                        ModalFinishPromptView.init)
+                    .padding(.trailing, 20)
                     
+                    GeometryReader { geometry in
+                        PromptComponent()
+                    }
+                    .frame(height: 220)
+                    .padding([.leading, .trailing], 20)
                     
+                    CanvasView(canvasView: canvasView)
                 }
-                .padding(.trailing, 20)
+                //            .border(.red)
+                .navigationBarBackButtonHidden()
                 
-                GeometryReader { geometry in
-                    PromptComponent()
-                }
-                .frame(height: 220)
-                .padding([.leading, .trailing], 20)
                 
-                CanvasView(canvasView: canvasView)
             }
-//            .border(.red)
-            .navigationBarBackButtonHidden()
+            
+            if showSheetPromptDone {
+                ModalConfirmationFinishPromptJournal( showSheetPromptDone: $showSheetPromptDone, showQuotesModal: $showQuotesModal)
+                    .background(Color.black.opacity(0.5))
+                    .edgesIgnoringSafeArea(.all)
+            } else if showQuotesModal {
+                ModalFinishPromptView(showQuotesModal: $showQuotesModal, showSheetPromptDone: $showSheetPromptDone, goToHome: $goToHome)
+                    .background(Color.black.opacity(0.5))
+                    .edgesIgnoringSafeArea(.all)
+            } else if !showSheetPromptDone && !showQuotesModal && goToHome{
+                JournalView()
+            }
         }
 
         

@@ -50,6 +50,7 @@
 		8B7572802A02AFD500055090 /* CircleButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B75727F2A02AFD500055090 /* CircleButtonNext.swift */; };
 		8B7572822A02D84600055090 /* FreeWriteJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572812A02D84600055090 /* FreeWriteJournalView.swift */; };
 		8B7572842A02D86700055090 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572832A02D86700055090 /* CanvasView.swift */; };
+		8B7572862A02E29000055090 /* SelfAssessmentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572852A02E29000055090 /* SelfAssessmentResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		8B75727F2A02AFD500055090 /* CircleButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonNext.swift; sourceTree = "<group>"; };
 		8B7572812A02D84600055090 /* FreeWriteJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWriteJournalView.swift; sourceTree = "<group>"; };
 		8B7572832A02D86700055090 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		8B7572852A02E29000055090 /* SelfAssessmentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAssessmentResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 				42E6A56A2A0111970008BFF1 /* testSidebar.swift */,
 				8B75726F2A026E8900055090 /* NewSidebarTest.swift */,
 				8B5BFBE229F2C967002A2526 /* PromptComponent.swift */,
+				8B7572852A02E29000055090 /* SelfAssessmentResult.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				8B7572642A0247E900055090 /* ModalConfirmationFinishPromptJournal.swift in Sources */,
 				8B5BFBC329F2901F002A2526 /* AppColor.swift in Sources */,
 				8B7572702A026E8900055090 /* NewSidebarTest.swift in Sources */,
+				8B7572862A02E29000055090 /* SelfAssessmentResult.swift in Sources */,
 				8B63CE6A29F99E3000012A38 /* ModalCreateJournalView.swift in Sources */,
 				8B75726E2A025FDC00055090 /* PreSelfAssesment.swift in Sources */,
 				8B5BFBC529F291CE002A2526 /* EmptyStateView.swift in Sources */,

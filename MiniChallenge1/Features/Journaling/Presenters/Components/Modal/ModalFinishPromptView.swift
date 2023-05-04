@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ModalFinishPromptView: View {
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
+    @Binding var showQuotesModal: Bool
+    @Binding var showSheetPromptDone: Bool
+    @Binding var goToHome: Bool
     @State var quotes = "“Ceritanya ini adalah quotes buat nge empower tralalalala tapi bukan influencer”"
     
     func close() {
-        dismiss()
+        showQuotesModal = false
     }
     
     var body: some View {
@@ -20,13 +23,17 @@ struct ModalFinishPromptView: View {
             GeometryReader { geometry in
                 ZStack {
                     Image("CloverOutline")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: geometry.size.height * 0.45)
                     VStack{
                         Spacer()
+                        
                         Text ("\(quotes)")
                             .font(body32)
                             .foregroundColor(AppColor.neutral100)
                             .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width * 0.5)
+                            .frame(width: geometry.size.width * 0.6)
                         
                         Spacer()
                         
@@ -34,9 +41,6 @@ struct ModalFinishPromptView: View {
                             HStack {
                                 Button {
                                     close()
-                                    NavigationLink(destination: ProfileView()) {
-                                        Text("Test")
-                                    }
                                 } label: {
                                     Text("Next Prompt")
                                         .font(caption2)
@@ -49,11 +53,18 @@ struct ModalFinishPromptView: View {
                                
                             }
                             
-                            NavigationLink(destination: JournalView()) {
+                            Button {
+                                close()
+                                goToHome = true
+                            } label: {
                                 Text("Back to Home")
                                     .font(bodyBold)
                                     .foregroundColor(AppColor.info)
                             }
+                            .padding(.bottom, 80)
+                        
+                            
+                            
                         }
                         
                         
@@ -62,9 +73,11 @@ struct ModalFinishPromptView: View {
                     }
                     
                 }
-                .padding(20)
-                .interactiveDismissDisabled()
-                .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.8)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(radius: 10)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             }
         }
     }
@@ -72,6 +85,6 @@ struct ModalFinishPromptView: View {
 
 struct ModalFinishPromptView_Previews: PreviewProvider {
     static var previews: some View {
-        ModalFinishPromptView()
+        ModalFinishPromptView(showQuotesModal: .constant(true), showSheetPromptDone: .constant(false), goToHome: .constant(false))
     }
 }

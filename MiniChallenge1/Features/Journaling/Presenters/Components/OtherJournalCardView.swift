@@ -14,6 +14,8 @@ struct OtherJournalCardView: View {
     @Binding var progressBarSize: Double
     @Binding var progress: Double
     
+//    @Binding var destinationView: any View
+    
     @State var ColorJournal: Color
     
     var body: some View {

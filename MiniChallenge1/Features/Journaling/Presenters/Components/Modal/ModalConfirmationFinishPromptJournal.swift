@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct ModalConfirmationFinishPromptJournal: View {
+//    @Environment(\.dismiss) var dismiss
+    @Binding var showSheetPromptDone: Bool
+    @Binding var showQuotesModal: Bool
+    
+    func close() {
+        showSheetPromptDone = false
+    }
+    
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
@@ -18,10 +26,13 @@ struct ModalConfirmationFinishPromptJournal: View {
                     
                     Text("This action can’t be undone, are you sure want to quit?")
                         .font(body32)
+                        .multilineTextAlignment(.center)
                     
                     HStack {
                         Button {
-                            
+                            close()
+                            showSheetPromptDone = false
+                            showQuotesModal = true
                         } label: {
                             Text("Yes, keep my answer")
                                 .font(caption2)
@@ -31,11 +42,13 @@ struct ModalConfirmationFinishPromptJournal: View {
                         .background(AppColor.green60)
                         .foregroundColor(AppColor.neutral10)
                         .cornerRadius(10)
+//                        .sheet(isPresented: $showOtherModal, content:
+//                            ModalFinishPromptView.init)
                     }
                     .padding([.top, .bottom], 20)
                     
                     Button {
-                        
+                        close()
                     } label: {
                         Text("Nooo, take me back:(")
                             .font(bodyBold)
@@ -46,8 +59,11 @@ struct ModalConfirmationFinishPromptJournal: View {
                     
                     
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height)
-
+                .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.8)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(radius: 10)
+                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             }
         }
     }
@@ -55,6 +71,6 @@ struct ModalConfirmationFinishPromptJournal: View {
 
 struct ModalConfirmationFinishPromptJournal_Previews: PreviewProvider {
     static var previews: some View {
-        ModalConfirmationFinishPromptJournal()
+        ModalConfirmationFinishPromptJournal( showSheetPromptDone: .constant(true), showQuotesModal: .constant(false))
     }
 }

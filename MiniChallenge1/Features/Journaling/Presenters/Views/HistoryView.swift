@@ -22,15 +22,6 @@ struct HistoryView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("History")
-                    .multilineTextAlignment(.leading)
-                    .font(.largeTitle)
-                    .foregroundColor(AppColor.neutral100)
-                Spacer()
-                Image(systemName: "arrow.up.arrow.down")
-            }
-            
             VStack {
                 VStack{
                     List{
@@ -77,7 +68,8 @@ struct HistoryView: View {
                 
             Spacer()
         }
-        .padding([.leading, .trailing, .top], 40)
+        .padding([.leading, .trailing], 40)
+        .padding(.top, 20)
         .background(AppColor.neutral20)
     }
 }

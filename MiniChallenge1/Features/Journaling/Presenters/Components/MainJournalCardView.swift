@@ -15,7 +15,7 @@ struct MainJournalCardView: View {
     @Binding var progress: Double
     
     var body: some View {
-        NavigationLink (destination: HistoryView()){
+        NavigationLink (destination: PromptJournalView()){
             HStack {
                 RoundedRectangle(cornerRadius: 0)
                     .foregroundColor(AppColor.success)
