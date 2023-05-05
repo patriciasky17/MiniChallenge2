@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AssessmentCategory: Identifiable, Hashable{
-    let id = UUID()
-    var name: String
-}
+//struct AssessmentCategory: Identifiable, Hashable{
+//    let id = UUID()
+//    var name: String
+//}

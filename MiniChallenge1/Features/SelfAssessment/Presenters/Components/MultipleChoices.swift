@@ -11,19 +11,18 @@ struct MultipleChoices: View {
     let letters: [String] = ["A", "B", "C", "D"]
     let choices: [String] = ["Tidak pernah", "Jarang", "Terkadang", "Sering"]
     
-    @Binding var selectedIndex: Int
-    @Binding var selectedAnswer: String
+    @ObservedObject var assessmentViewModels: AssessmentViewModels
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             ForEach(choices.indices, id: \.self) { index in
                 MultipleChoice(letter: letters[index],
                    textMultipleChoice: choices[index],
-                   isSelected: selectedIndex == index,
+                               isSelected: assessmentViewModels.selectedIndex == index,
                    onSelect: {
-                    selectedIndex = index
-                    selectedAnswer = choices[index]
-                    print(selectedAnswer)
+                    assessmentViewModels.selectedIndex = index
+                    assessmentViewModels.selectedAnswer = choices[index]
+                    print(assessmentViewModels.selectedAnswer)
                 })
             }
         }
@@ -31,7 +30,8 @@ struct MultipleChoices: View {
 }
 
 struct MultipleChoices_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MultipleChoices(selectedIndex: .constant(2), selectedAnswer: .constant("Tidak Pernah"))
+        MultipleChoices(assessmentViewModels: AssessmentViewModels())
     }
 }

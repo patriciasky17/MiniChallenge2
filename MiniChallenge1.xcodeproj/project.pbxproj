@@ -35,7 +35,6 @@
 		8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBD329F29342002A2526 /* Dummy.swift */; };
 		8B5BFBDD29F2C83B002A2526 /* Journaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBDC29F2C83B002A2526 /* Journaling.swift */; };
 		8B5BFBDF29F2C849002A2526 /* JournalingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBDE29F2C849002A2526 /* JournalingRepository.swift */; };
-		8B5BFBE129F2C85A002A2526 /* JournalingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBE029F2C85A002A2526 /* JournalingViewModel.swift */; };
 		8B5BFBE329F2C967002A2526 /* PromptComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBE229F2C967002A2526 /* PromptComponent.swift */; };
 		8B5BFBE929F51293002A2526 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBE829F51293002A2526 /* JournalView.swift */; };
 		8B5BFBEB29F512A0002A2526 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5BFBEA29F512A0002A2526 /* HistoryView.swift */; };
@@ -61,6 +60,7 @@
 		8B7572882A0395AB00055090 /* NumberingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7572872A0395AB00055090 /* NumberingPage.swift */; };
 		8BD7D0962A03FD800008015A /* UserDefaultForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7D0952A03FD800008015A /* UserDefaultForUser.swift */; };
 		8BD7D0982A04D8AD0008015A /* FreeWriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7D0972A04D8AD0008015A /* FreeWriteComponent.swift */; };
+		8BD7D09A2A05016A0008015A /* AssessmentQuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7D0992A05016A0008015A /* AssessmentQuestionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +93,6 @@
 		8B5BFBD329F29342002A2526 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		8B5BFBDC29F2C83B002A2526 /* Journaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journaling.swift; sourceTree = "<group>"; };
 		8B5BFBDE29F2C849002A2526 /* JournalingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingRepository.swift; sourceTree = "<group>"; };
-		8B5BFBE029F2C85A002A2526 /* JournalingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingViewModel.swift; sourceTree = "<group>"; };
 		8B5BFBE229F2C967002A2526 /* PromptComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptComponent.swift; sourceTree = "<group>"; };
 		8B5BFBE829F51293002A2526 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		8B5BFBEA29F512A0002A2526 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -119,6 +118,7 @@
 		8B7572872A0395AB00055090 /* NumberingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberingPage.swift; sourceTree = "<group>"; };
 		8BD7D0952A03FD800008015A /* UserDefaultForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultForUser.swift; sourceTree = "<group>"; };
 		8BD7D0972A04D8AD0008015A /* FreeWriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeWriteComponent.swift; sourceTree = "<group>"; };
+		8BD7D0992A05016A0008015A /* AssessmentQuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentQuestionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +140,7 @@
 				426DF5F22A04F0C5000DAAC7 /* AssessmentCategory.swift */,
 				426DF5EE2A04F05A000DAAC7 /* AssessmentResult.swift */,
 				426DF5EC2A04E5FA000DAAC7 /* AssessmentRepository.swift */,
+				8BD7D0992A05016A0008015A /* AssessmentQuestionRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,7 +353,6 @@
 		8B5BFBD729F2C6BD002A2526 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8B5BFBE029F2C85A002A2526 /* JournalingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -597,6 +597,7 @@
 				8BD7D0962A03FD800008015A /* UserDefaultForUser.swift in Sources */,
 				67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */,
 				8B75726C2A02528100055090 /* MultipleChoices.swift in Sources */,
+				8BD7D09A2A05016A0008015A /* AssessmentQuestionRepository.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				42E6A56B2A0111970008BFF1 /* testSidebar.swift in Sources */,
 				426DF5F32A04F0C5000DAAC7 /* AssessmentCategory.swift in Sources */,
@@ -604,7 +605,6 @@
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
 				42C9A7572A00161500745583 /* FontSystem.swift in Sources */,
 				8B63CE6729F9919C00012A38 /* ButtonMainJournalView.swift in Sources */,
-				8B5BFBE129F2C85A002A2526 /* JournalingViewModel.swift in Sources */,
 				8B63CE7029FA786C00012A38 /* PromptJournalView.swift in Sources */,
 				8B63CE6129F9531600012A38 /* OtherJournalCardView.swift in Sources */,
 				8B63CE6E29FA64B000012A38 /* SplashScreen.swift in Sources */,

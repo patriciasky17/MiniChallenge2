@@ -10,54 +10,45 @@ import SwiftUI
 struct AssesmentView: View {
     @EnvironmentObject var userDefaultForUser: UserDefaultForUser
     
-    @State private var selfAssessmentQuestions: [String] = ["Apakah demikian?", "Apakah kamu sering terlibat dalam aktivitas yang sejalan dengan nilai dan keyakinan kamu?"]
-    @State private var selectedAnswer = ""
-    @State private var selectedIndex = -1
-    @State private var step = 1
+    @StateObject private var assessmentViewModels = AssessmentViewModels()
+    
     
     @Binding var fromProfileView: Bool
     
-    var totalSteps: Int {
-        selfAssessmentQuestions.count
-    }
-    
-    var currentQuestion: String {
-        selfAssessmentQuestions[step-1]
-    }
 
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
                     Spacer()
-                    Text("\(step)/\(totalSteps)")
+                    Text("\(assessmentViewModels.step)/\(assessmentViewModels.totalSteps)")
                         .font(body32)
                 }
                 Spacer()
-                Text("\(currentQuestion)")
+                Text("\(assessmentViewModels.getQuestion().questions)")
                     .font(subheadline)
                     .foregroundColor(AppColor.green60)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .multilineTextAlignment(.leading)
                 HStack {
-                    MultipleChoices(selectedIndex: $selectedIndex, selectedAnswer: $selectedAnswer)
+                    MultipleChoices(assessmentViewModels: assessmentViewModels)
                     Spacer()
                 }
                 .padding()
                 
                 Spacer()
                 
-                if step == totalSteps {
+                if assessmentViewModels.step == assessmentViewModels.totalSteps {
                     HStack {
                         Spacer()
-                        if selectedAnswer.isEmpty {
-                            CircleButtonNext(destination: ContentView()).disabled(selectedAnswer.isEmpty)
+                        if assessmentViewModels.selectedAnswer.isEmpty {
+                            CircleButtonNext(destination: ContentView()).disabled(assessmentViewModels.selectedAnswer.isEmpty)
                         } else {
                             if fromProfileView{
-                                CircleButtonNext(destination: JournalView()).disabled(selectedAnswer.isEmpty)
+                                CircleButtonNext(destination: JournalView()).disabled(assessmentViewModels.selectedAnswer.isEmpty)
                             } else {
                                 CircleButtonNext(destination: ContentView())
-                                    .disabled(selectedAnswer.isEmpty)
+                                    .disabled( assessmentViewModels.selectedAnswer.isEmpty)
                                     .simultaneousGesture(TapGesture().onEnded{
                                         
                                         UserDefaults.standard.set(true, forKey: "isCompletedAssessment")
@@ -86,7 +77,7 @@ struct AssesmentView: View {
                         
                     }
                     .navigationBarBackButtonHidden(true)
-                    .disabled(selectedAnswer.isEmpty)
+                    .disabled(assessmentViewModels.selectedAnswer.isEmpty)
                     .padding()
                 }
                 
@@ -98,12 +89,12 @@ struct AssesmentView: View {
     }
     
     func getToTheNextStep() {
-        if step == totalSteps {
+        if assessmentViewModels.step == assessmentViewModels.totalSteps {
 
         } else {
-            step += 1
-            selectedAnswer = ""
-            selectedIndex = -1
+            assessmentViewModels.step += 1
+            assessmentViewModels.selectedAnswer = ""
+            assessmentViewModels.selectedIndex = -1
         }
     }
 }
