@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426DF5E52A04E2FB000DAAC7 /* AsssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */; };
+		426DF5E82A04E32C000DAAC7 /* AssessmentViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5E72A04E32C000DAAC7 /* AssessmentViewModels.swift */; };
+		426DF5EB2A04E3B9000DAAC7 /* JournalingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5EA2A04E3B9000DAAC7 /* JournalingViewModel.swift */; };
 		42C9A7572A00161500745583 /* FontSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7562A00161500745583 /* FontSystem.swift */; };
 		42C9A7592A00168A00745583 /* ModalFinishPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */; };
 		42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsssessmentModel.swift; sourceTree = "<group>"; };
+		426DF5E72A04E32C000DAAC7 /* AssessmentViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentViewModels.swift; sourceTree = "<group>"; };
+		426DF5EA2A04E3B9000DAAC7 /* JournalingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingViewModel.swift; sourceTree = "<group>"; };
 		42C9A7562A00161500745583 /* FontSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSystem.swift; sourceTree = "<group>"; };
 		42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFinishPromptView.swift; sourceTree = "<group>"; };
 		42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryJournalCardView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		426DF5E32A04E2E9000DAAC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		426DF5E62A04E302000DAAC7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				426DF5E72A04E32C000DAAC7 /* AssessmentViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		426DF5E92A04E359000DAAC7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				426DF5EA2A04E3B9000DAAC7 /* JournalingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		42C9A7552A00161500745583 /* Typography */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +321,7 @@
 		8B5BFBD529F2C67C002A2526 /* Journaling */ = {
 			isa = PBXGroup;
 			children = (
+				426DF5E92A04E359000DAAC7 /* ViewModels */,
 				8B5BFBD629F2C6B2002A2526 /* Models */,
 				8B5BFBD829F2C6D4002A2526 /* Presenters */,
 			);
@@ -369,7 +400,8 @@
 		8B7572712A02A61000055090 /* SelfAssessment */ = {
 			isa = PBXGroup;
 			children = (
-				8B7572782A02A83000055090 /* Models */,
+				426DF5E62A04E302000DAAC7 /* ViewModels */,
+				426DF5E32A04E2E9000DAAC7 /* Models */,
 				8B7572772A02A81500055090 /* Presenters */,
 			);
 			path = SelfAssessment;
@@ -387,17 +419,9 @@
 			isa = PBXGroup;
 			children = (
 				8B5BFBD729F2C6BD002A2526 /* ViewModels */,
-				8B7572742A02A73200055090 /* Models */,
 				8B7572752A02A73C00055090 /* Presenters */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		8B7572742A02A73200055090 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		8B7572752A02A73C00055090 /* Presenters */ = {
@@ -424,13 +448,6 @@
 				8B75727D2A02A9C600055090 /* Components */,
 			);
 			path = Presenters;
-			sourceTree = "<group>";
-		};
-		8B7572782A02A83000055090 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		8B7572792A02A86900055090 /* Views */ = {
@@ -596,11 +613,14 @@
 				8B5BFBD229F292DD002A2526 /* CardModifier.swift in Sources */,
 				8B7572642A0247E900055090 /* ModalConfirmationFinishPromptJournal.swift in Sources */,
 				8B5BFBC329F2901F002A2526 /* AppColor.swift in Sources */,
+				426DF5E52A04E2FB000DAAC7 /* AsssessmentModel.swift in Sources */,
 				8B7572702A026E8900055090 /* NewSidebarTest.swift in Sources */,
 				8BD7D0982A04D8AD0008015A /* FreeWriteComponent.swift in Sources */,
 				8B7572862A02E29000055090 /* SelfAssessmentResult.swift in Sources */,
+				426DF5EB2A04E3B9000DAAC7 /* JournalingViewModel.swift in Sources */,
 				8B63CE6A29F99E3000012A38 /* ModalCreateJournalView.swift in Sources */,
 				8B75726E2A025FDC00055090 /* PreSelfAssesment.swift in Sources */,
+				426DF5E82A04E32C000DAAC7 /* AssessmentViewModels.swift in Sources */,
 				8B5BFBC529F291CE002A2526 /* EmptyStateView.swift in Sources */,
 				8B7572802A02AFD500055090 /* CircleButtonNext.swift in Sources */,
 				8B63CE5829F913DD00012A38 /* CircularProgressBar.swift in Sources */,
