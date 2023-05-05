@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		426DF5E52A04E2FB000DAAC7 /* AsssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */; };
+		426DF5E52A04E2FB000DAAC7 /* AsssessmentAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5E42A04E2FB000DAAC7 /* AsssessmentAnswer.swift */; };
 		426DF5E82A04E32C000DAAC7 /* AssessmentViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5E72A04E32C000DAAC7 /* AssessmentViewModels.swift */; };
 		426DF5EB2A04E3B9000DAAC7 /* JournalingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5EA2A04E3B9000DAAC7 /* JournalingViewModel.swift */; };
+		426DF5ED2A04E5FA000DAAC7 /* AssessmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5EC2A04E5FA000DAAC7 /* AssessmentRepository.swift */; };
+		426DF5EF2A04F05A000DAAC7 /* AssessmentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5EE2A04F05A000DAAC7 /* AssessmentResult.swift */; };
+		426DF5F12A04F0B6000DAAC7 /* AssessmentQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5F02A04F0B6000DAAC7 /* AssessmentQuestion.swift */; };
+		426DF5F32A04F0C5000DAAC7 /* AssessmentCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DF5F22A04F0C5000DAAC7 /* AssessmentCategory.swift */; };
 		42C9A7572A00161500745583 /* FontSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7562A00161500745583 /* FontSystem.swift */; };
 		42C9A7592A00168A00745583 /* ModalFinishPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */; };
 		42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */; };
@@ -60,9 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsssessmentModel.swift; sourceTree = "<group>"; };
+		426DF5E42A04E2FB000DAAC7 /* AsssessmentAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsssessmentAnswer.swift; sourceTree = "<group>"; };
 		426DF5E72A04E32C000DAAC7 /* AssessmentViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentViewModels.swift; sourceTree = "<group>"; };
 		426DF5EA2A04E3B9000DAAC7 /* JournalingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingViewModel.swift; sourceTree = "<group>"; };
+		426DF5EC2A04E5FA000DAAC7 /* AssessmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentRepository.swift; sourceTree = "<group>"; };
+		426DF5EE2A04F05A000DAAC7 /* AssessmentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentResult.swift; sourceTree = "<group>"; };
+		426DF5F02A04F0B6000DAAC7 /* AssessmentQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentQuestion.swift; sourceTree = "<group>"; };
+		426DF5F22A04F0C5000DAAC7 /* AssessmentCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCategory.swift; sourceTree = "<group>"; };
 		42C9A7562A00161500745583 /* FontSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSystem.swift; sourceTree = "<group>"; };
 		42C9A7582A00168A00745583 /* ModalFinishPromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFinishPromptView.swift; sourceTree = "<group>"; };
 		42CDB44329FACF8C00C8AD6F /* HistoryJournalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryJournalCardView.swift; sourceTree = "<group>"; };
@@ -127,7 +135,11 @@
 		426DF5E32A04E2E9000DAAC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				426DF5E42A04E2FB000DAAC7 /* AsssessmentModel.swift */,
+				426DF5E42A04E2FB000DAAC7 /* AsssessmentAnswer.swift */,
+				426DF5F02A04F0B6000DAAC7 /* AssessmentQuestion.swift */,
+				426DF5F22A04F0C5000DAAC7 /* AssessmentCategory.swift */,
+				426DF5EE2A04F05A000DAAC7 /* AssessmentResult.swift */,
+				426DF5EC2A04E5FA000DAAC7 /* AssessmentRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,12 +592,14 @@
 				8B5BFBBB29F28D20002A2526 /* ErrorMessage.swift in Sources */,
 				42CDB44429FACF8C00C8AD6F /* HistoryJournalCardView.swift in Sources */,
 				8B63CE5A29F917A500012A38 /* CornerRadius+Ext.swift in Sources */,
+				426DF5F12A04F0B6000DAAC7 /* AssessmentQuestion.swift in Sources */,
 				8B5BFB6E29EFE370002A2526 /* ContentView.swift in Sources */,
 				8BD7D0962A03FD800008015A /* UserDefaultForUser.swift in Sources */,
 				67B0B83229FED7BE003A982F /* ProfileEditView.swift in Sources */,
 				8B75726C2A02528100055090 /* MultipleChoices.swift in Sources */,
 				8B63CE5E29F9530200012A38 /* MainJournalCardView.swift in Sources */,
 				42E6A56B2A0111970008BFF1 /* testSidebar.swift in Sources */,
+				426DF5F32A04F0C5000DAAC7 /* AssessmentCategory.swift in Sources */,
 				8B7572882A0395AB00055090 /* NumberingPage.swift in Sources */,
 				8B5BFBD429F29342002A2526 /* Dummy.swift in Sources */,
 				42C9A7572A00161500745583 /* FontSystem.swift in Sources */,
@@ -596,6 +610,7 @@
 				8B63CE6E29FA64B000012A38 /* SplashScreen.swift in Sources */,
 				8B63CE5629F6D7D000012A38 /* UIImage+Ext.swift in Sources */,
 				8B5BFBB929F28CB5002A2526 /* Prompt.swift in Sources */,
+				426DF5EF2A04F05A000DAAC7 /* AssessmentResult.swift in Sources */,
 				8B5BFBE929F51293002A2526 /* JournalView.swift in Sources */,
 				8B75726A2A02514400055090 /* MultipleChoice.swift in Sources */,
 				67B0B82629FA5ACC003A982F /* OnboardingView.swift in Sources */,
@@ -610,10 +625,11 @@
 				8B5BFBEB29F512A0002A2526 /* HistoryView.swift in Sources */,
 				8B5BFBCF29F292C1002A2526 /* TextModifier.swift in Sources */,
 				8B7572842A02D86700055090 /* CanvasView.swift in Sources */,
+				426DF5ED2A04E5FA000DAAC7 /* AssessmentRepository.swift in Sources */,
 				8B5BFBD229F292DD002A2526 /* CardModifier.swift in Sources */,
 				8B7572642A0247E900055090 /* ModalConfirmationFinishPromptJournal.swift in Sources */,
 				8B5BFBC329F2901F002A2526 /* AppColor.swift in Sources */,
-				426DF5E52A04E2FB000DAAC7 /* AsssessmentModel.swift in Sources */,
+				426DF5E52A04E2FB000DAAC7 /* AsssessmentAnswer.swift in Sources */,
 				8B7572702A026E8900055090 /* NewSidebarTest.swift in Sources */,
 				8BD7D0982A04D8AD0008015A /* FreeWriteComponent.swift in Sources */,
 				8B7572862A02E29000055090 /* SelfAssessmentResult.swift in Sources */,
