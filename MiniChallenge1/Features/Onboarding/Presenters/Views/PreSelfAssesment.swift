@@ -10,6 +10,8 @@ import SwiftUI
 struct PreSelfAssesment: View {
     @EnvironmentObject var userDefaultForUser: UserDefaultForUser
     
+    @State private var fromProfileView = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -58,7 +60,7 @@ struct PreSelfAssesment: View {
                             .frame(height: 24)
                         HStack {
                             Spacer()
-                            CircleButtonNext(destination: AssesmentView())
+                            CircleButtonNext(destination: AssesmentView(fromProfileView: $fromProfileView))
                             .padding([.trailing, .leading], 40)
                         }
                     }

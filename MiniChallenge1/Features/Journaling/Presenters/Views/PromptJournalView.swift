@@ -48,7 +48,7 @@ struct PromptJournalView: View {
                     
                 }
                 //            .border(.red)
-                .navigationBarBackButtonHidden()
+//                .navigationBarBackButtonHidden()
                 
                 
             }

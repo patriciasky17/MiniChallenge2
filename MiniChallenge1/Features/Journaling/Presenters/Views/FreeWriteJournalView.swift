@@ -40,7 +40,7 @@ struct FreeWriteJournalView: View {
                     
                     
                     HStack {
-                        NumberingPage(promptNumberNow: $promptNumberNow, overallPage:$overallPage)
+                        FreeWriteComponent()
                             
                     }
                     .padding([.leading, .trailing], 20)

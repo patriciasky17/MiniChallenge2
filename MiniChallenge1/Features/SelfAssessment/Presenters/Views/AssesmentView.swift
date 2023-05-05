@@ -14,6 +14,9 @@ struct AssesmentView: View {
     @State private var selectedAnswer = ""
     @State private var selectedIndex = -1
     @State private var step = 1
+    
+    @Binding var fromProfileView: Bool
+    
     var totalSteps: Int {
         selfAssessmentQuestions.count
     }
@@ -50,13 +53,18 @@ struct AssesmentView: View {
                         if selectedAnswer.isEmpty {
                             CircleButtonNext(destination: ContentView()).disabled(selectedAnswer.isEmpty)
                         } else {
-                            CircleButtonNext(destination: ContentView())
-                            .simultaneousGesture(TapGesture().onEnded{
-                                
-                                UserDefaults.standard.set(true, forKey: "isCompletedAssessment")
-                                userDefaultForUser.isCompletedAssessment = UserDefaults.standard.bool(forKey: "isCompletedAssessment")
-                                print(userDefaultForUser.isCompletedAssessment)
-                            })
+                            if fromProfileView{
+                                CircleButtonNext(destination: JournalView()).disabled(selectedAnswer.isEmpty)
+                            } else {
+                                CircleButtonNext(destination: ContentView())
+                                    .disabled(selectedAnswer.isEmpty)
+                                    .simultaneousGesture(TapGesture().onEnded{
+                                        
+                                        UserDefaults.standard.set(true, forKey: "isCompletedAssessment")
+                                        userDefaultForUser.isCompletedAssessment = UserDefaults.standard.bool(forKey: "isCompletedAssessment")
+                                        print(userDefaultForUser.isCompletedAssessment)
+                                    })
+                            }
                         }
                         
                     }
@@ -104,6 +112,6 @@ struct AssesmentView: View {
 struct AssesmentView_Previews: PreviewProvider {
     static var previews: some View {
         let userDefaultForUser = UserDefaultForUser()
-        AssesmentView()
+        AssesmentView(fromProfileView: .constant(false))
     }
 }

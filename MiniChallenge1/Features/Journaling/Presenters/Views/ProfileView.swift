@@ -11,6 +11,7 @@ struct ProfileView: View {
     
     @State private var userProfileName = "Tessa Manobal"
     @State private var userProfileAge = 26
+    @State private var fromProfileView = true
     
     var body: some View {
         NavigationStack {
@@ -36,7 +37,7 @@ struct ProfileView: View {
                     Spacer()
                     
                     HStack {
-                        NavigationLink(destination: AssesmentView()) {
+                        NavigationLink(destination: AssesmentView(fromProfileView: $fromProfileView)) {
                             VStack (spacing: 20) {
                                 Text("Retake the test")
                                     .font(caption2)
