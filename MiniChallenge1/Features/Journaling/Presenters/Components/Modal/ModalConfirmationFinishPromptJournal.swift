@@ -27,6 +27,7 @@ struct ModalConfirmationFinishPromptJournal: View {
                     Text("This action can’t be undone, are you sure want to quit?")
                         .font(body32)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width * 0.75)
                     
                     HStack {
                         Button {

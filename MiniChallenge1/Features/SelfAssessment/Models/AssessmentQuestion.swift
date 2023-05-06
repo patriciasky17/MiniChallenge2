@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct AssessmentQuestion: Identifiable, Hashable{
-    let id = UUID()
-    var isDone: Bool
-    var questionContent: String
+enum AssessmentCategory {
+    case peace
+    case selfAwareness
+    case lifePurpose
+}
+
+struct AssessmentQuestion {
+    var no: Int
+    var questions: String
+    var category: AssessmentCategory
 }
